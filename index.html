@@ -12,6 +12,8 @@
       referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="style.css" />
+    <script src="https://js.puter.com/v2/"></script>
+
     <title>Quiz App</title>
   </head>
   <body>
@@ -20,8 +22,8 @@
         <h1 class="heading">Jimmy老師的文法題目練習系統</h1>
         <div class="settings">
           <label for="user-name">請輸入你的名字:</label>
-          <input type="text" id="user-name"  placeholder="輸入名字" />
-          
+          <input type="text" id="user-name" placeholder="輸入名字" />
+
           <label for="num-questions">題目數量:</label>
           <select id="num-questions">
             <option value="5">5</option>
@@ -29,8 +31,6 @@
             <option value="15">15</option>
             <option value="20">20</option>
             <option value="50">50</option>
-
-
           </select>
           <label for="category">選擇文法:</label>
           <select id="category">
@@ -39,7 +39,6 @@
             <option value="HanLinB4L3L4test">翰林版國二上第二次段考</option>
 
             <!--<option value="timeDay">What time/day的問法</option>-->
-
           </select>
           <!--<label for="difficulty">Select difficulty:</label>
           <select id="difficulty">
@@ -93,18 +92,158 @@
             <span class="final-score">0</span>
             <span class="total-score">/10</span>
           </div>
-          <div class="user-name-display" style="margin-top: 10px; color: #a2aace; font-size: 16px;"></div>
+          <div
+            class="user-name-display"
+            style="margin-top: 10px; color: #a2aace; font-size: 16px"
+          ></div>
 
-          <div class="category-display" style="margin-top: 10px; color: #a2aace; font-size: 16px;"></div>
+          <div
+            class="category-display"
+            style="margin-top: 10px; color: #a2aace; font-size: 16px"
+          ></div>
         </div>
         <!-- 作答詳情 -->
-        <div class="answer-details" style="margin-top: 20px; color: #fff; font-size: 14px;"></div>
+        <div
+          class="answer-details"
+          style="margin-top: 20px; color: #fff; font-size: 14px"
+        ></div>
         <button class="btn restart">重新測驗</button>
       </div>
     </div>
 
     <script src="script.js"></script>
     <script src="custom.js"></script>
+    <!-- 新增 AI Bot UI，不更動原本 HTML 結構 -->
+    <div
+      id="ai-bot-ui"
+      style="position: fixed; bottom: 20px; right: 20px; z-index: 9999"
+    >
+      <button
+        id="ai-toggle"
+        style="
+          background-color: #0c80ef;
+          color: white;
+          border: none;
+          border-radius: 50%;
+          width: 60px;
+          height: 60px;
+          font-size: 24px;
+          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+          cursor: pointer;
+        "
+      >
+        🤖
+      </button>
+      <div
+        id="ai-chat-box"
+        style="
+          display: none;
+          margin-top: 10px;
+          width: 300px;
+          max-height: 400px;
+          background: #fff;
+          border: 1px solid #ccc;
+          border-radius: 10px;
+          overflow: hidden;
+          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        "
+      >
+        <div
+          style="
+            background: #1f2847;
+            color: white;
+            padding: 10px;
+            font-weight: bold;
+          "
+        >
+          AI 助教
+        </div>
+        <div
+          id="ai-chat-messages"
+          style="
+            padding: 10px;
+            height: 260px;
+            overflow-y: auto;
+            font-size: 14px;
+            background: #f4f4f4;
+          "
+        ></div>
+        <div style="display: flex; border-top: 1px solid #ccc">
+          <input
+            id="ai-user-input"
+            type="text"
+            placeholder="問我任何題目..."
+            style="flex: 1; border: none; padding: 10px; font-size: 14px"
+          />
+          <button
+            id="ai-send"
+            style="
+              background: #0c80ef;
+              color: white;
+              border: none;
+              padding: 10px 15px;
+              cursor: pointer;
+            "
+          >
+            送出
+          </button>
+        </div>
+      </div>
+    </div>
 
+    <script>
+      const toggleBtn = document.getElementById("ai-toggle");
+      const chatBox = document.getElementById("ai-chat-box");
+      const sendBtn = document.getElementById("ai-send");
+      const userInput = document.getElementById("ai-user-input");
+      const messagesBox = document.getElementById("ai-chat-messages");
+
+      // ✅ 加入 system message：固定 AI 角色
+      const messageHistory = [
+        {
+          role: "system",
+          content:
+            "你是一位親切的台灣國中英文老師，你需要依照台灣國中的教學課綱回答學生的問題，請用繁體中文與英文回答user的問題。",
+        },
+      ];
+      toggleBtn.addEventListener("click", () => {
+        alert(
+          "當你按下訊息的送出後，會先要求你請先註冊一個 Puter 的帳號（https://puter.com）即可無限使用 AI 功能！"
+        );
+        chatBox.style.display =
+          chatBox.style.display === "none" ? "block" : "none";
+      });
+      sendBtn.addEventListener("click", sendMessage);
+      userInput.addEventListener("keypress", function (e) {
+        if (e.key === "Enter") sendMessage();
+      });
+
+      function sendMessage() {
+        const userMsg = userInput.value.trim();
+        if (!userMsg) return;
+        userInput.value = "";
+
+        appendMessage("你", userMsg);
+        messageHistory.push({ role: "user", content: userMsg });
+
+        puter.ai
+          .chat(messageHistory)
+          .then((response) => {
+            appendMessage("AI", response.message.content);
+            messageHistory.push(response.message);
+          })
+          .catch((err) => {
+            appendMessage("AI", "出錯了，請稍後再試");
+            console.error(err);
+          });
+      }
+
+      function appendMessage(sender, text) {
+        const msgElem = document.createElement("p");
+        msgElem.innerHTML = `<strong>${sender}:</strong> ${text}`;
+        messagesBox.appendChild(msgElem);
+        messagesBox.scrollTop = messagesBox.scrollHeight;
+      }
+    </script>
   </body>
 </html>
