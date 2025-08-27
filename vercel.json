@@ -1,9 +1,0 @@
-{
-  "functions": {
-    "api/chat.js": {
-      "runtime": "nodejs20.x",
-      "memory": 1536,
-      "maxDuration": 10
-    }
-  }
-}
