@@ -1,0 +1,27 @@
+{
+  "name": "jimmy_english_quiz_system",
+  "version": "1.0.0",
+  "description": "**Jimmy English Quiz System** 是一款專為提升學生英語考試而設計的測驗系統(線上填鴨系統ㄏㄏ)，基於 [opensource-coding/Javascript-Quiz-App](https://github.com/opensource-coding/Javascript-Quiz-App) 改良並添加一些功能，包括答題後的公開檢討模組。  \r 本系統適用於國中和高中學生，支援多樣化題型及分析功能，能有效提升學生的學習動機與成效。",
+  "main": "custom.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/a88019401/Jimmy_English_Quiz_System.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/a88019401/Jimmy_English_Quiz_System/issues"
+  },
+  "homepage": "https://github.com/a88019401/Jimmy_English_Quiz_System#readme",
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "sqlite3": "^5.1.7"
+  }
+}

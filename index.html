@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-Hant">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jimmy老師的文法題目練習系統</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
@@ -13,184 +14,31 @@
     />
     <link rel="stylesheet" href="style.css" />
     <script src="https://js.puter.com/v2/"></script>
+    <!-- 題庫 + 主程式 -->
+    <script src="custom.js" defer></script>
+    <script src="script.js" defer></script>
 
-    <title>Quiz App</title>
   </head>
-<!-- Firebase SDK（compat 版）-->
-<script src="https://www.gstatic.com/firebasejs/10.12.3/firebase-app-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/10.12.3/firebase-auth-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/10.12.3/firebase-firestore-compat.js"></script>
-
-<!-- 登入 UI：Email/密碼 + Google -->
-<div id="auth-box" style="margin:16px 0;color:#fff;max-width:520px;">
-  <div id="auth-status" style="margin-bottom:8px;">尚未登入</div>
-
-  <div style="display:flex; gap:8px; flex-wrap:wrap; align-items:flex-end;">
-    <label style="display:flex; flex-direction:column;">
-      <span>Email</span>
-      <input id="auth-email" type="email" placeholder="name@example.com" style="padding:6px;min-width:220px;">
-    </label>
-    <label style="display:flex; flex-direction:column;">
-      <span>密碼（≥6）</span>
-      <input id="auth-pass" type="password" placeholder="••••••" style="padding:6px;min-width:160px;">
-    </label>
-    <button id="btn-email-signup">Email 註冊</button>
-    <button id="btn-email-login">Email 登入</button>
-  </div>
-
-  <div style="margin-top:8px;">
-    <button id="btn-google">用 Google 登入</button>
-    <button id="btn-logout" style="display:none">登出</button>
-  </div>
-
-  <div id="approve-hint" style="display:none;margin-top:8px;color:#ffdf6e">
-    已送出註冊，待老師審核通過後才能開始作答。
-  </div>
-
-  <div id="auth-error" style="margin-top:8px;color:#ff8a8a;display:none"></div>
-</div>
-
-<script>
-  // 1) 初始化 Firebase（用你的專案參數）
-const firebaseConfig = {
-  apiKey: "AIzaSyASbUFTuAh3vbK0BFZG6hwQQOxJrCuya9w",
-  authDomain: "test-d72ca.firebaseapp.com",
-  projectId: "test-d72ca",
-  storageBucket: "test-d72ca.firebasestorage.app",
-  messagingSenderId: "374104132874",
-  appId: "1:374104132874:web:05b3a36b8855b560063ef3",
-  measurementId: "G-LP77MNJJVZ"
-};
-  firebase.initializeApp(firebaseConfig);
-  window.auth = firebase.auth();
-  window.db   = firebase.firestore();
-
-  // 2) 取得 DOM
-  const elEmail   = document.getElementById('auth-email');
-  const elPass    = document.getElementById('auth-pass');
-  const btnSignup = document.getElementById('btn-email-signup');
-  const btnLogin  = document.getElementById('btn-email-login');
-  const btnGoogle = document.getElementById('btn-google');
-  const btnLogout = document.getElementById('btn-logout');
-  const authStatus= document.getElementById('auth-status');
-  const approveHint = document.getElementById('approve-hint');
-  const authError = document.getElementById('auth-error');
-
-  // 3) 小工具：錯誤顯示
-  function showAuthError(msg){
-    authError.textContent = msg || '';
-    authError.style.display = msg ? 'block' : 'none';
-  }
-
-  // 4) Email格式檢查
-  const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-  // 5) 建立/更新學生基本資料
-  async function ensureUserProfile(user){
-    const ref = db.collection('users').doc(user.uid);
-    const snap = await ref.get();
-    if (!snap.exists) {
-      await ref.set({
-        displayName: user.displayName || '',
-        email: user.email || '',
-        createdAt: firebase.firestore.FieldValue.serverTimestamp(),
-        role: 'student',
-        approved: false
-      }, { merge: true });
-    } else {
-      // merge 更新 displayName/email
-      await ref.set({
-        displayName: user.displayName || snap.data().displayName || '',
-        email: user.email || snap.data().email || ''
-      }, { merge: true });
-    }
-  }
-
-  // 6) 控制開始測驗按鈕（不跟 script.js 衝突，不宣告 startBtn）
-  function setStartEnabled(enabled){
-    const startBtnEl = document.querySelector('.start');
-    if (!startBtnEl) return;
-    startBtnEl.disabled = !enabled;
-    startBtnEl.textContent = enabled ? "開始測驗" : "待審核中…";
-  }
-
-  // 7) 綁定事件（避免 prompt，改讀欄位值）
-  btnSignup.addEventListener('click', async () => {
-    showAuthError('');
-    const email = elEmail.value.trim();
-    const pass  = elPass.value;
-    if (!emailRe.test(email)) return showAuthError('Email 格式不正確');
-    if (!pass || pass.length < 6) return showAuthError('密碼至少 6 碼');
-
-    try {
-      await auth.createUserWithEmailAndPassword(email, pass);
-    } catch (e) {
-      showAuthError(e.message || '註冊失敗');
-      console.error(e);
-    }
-  });
-
-  btnLogin.addEventListener('click', async () => {
-    showAuthError('');
-    const email = elEmail.value.trim();
-    const pass  = elPass.value;
-    if (!emailRe.test(email)) return showAuthError('Email 格式不正確');
-    if (!pass) return showAuthError('請輸入密碼');
-
-    try {
-      await auth.signInWithEmailAndPassword(email, pass);
-    } catch (e) {
-      showAuthError(e.message || '登入失敗');
-      console.error(e);
-    }
-  });
-
-  btnGoogle.addEventListener('click', async () => {
-    showAuthError('');
-    try {
-      await auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
-    } catch (e) {
-      // 若又遇到 unauthorized-domain，請到 Firebase Console → Auth → Settings → Authorized domains 加入 127.0.0.1 / localhost
-      showAuthError(e.message || 'Google 登入失敗');
-      console.error(e);
-    }
-  });
-
-  btnLogout.addEventListener('click', () => auth.signOut());
-
-  // 8) 監聽登入狀態
-  auth.onAuthStateChanged(async (user) => {
-    if (!user) {
-      authStatus.textContent = '尚未登入';
-      btnLogout.style.display = 'none';
-      approveHint.style.display = 'none';
-      setStartEnabled(false);
-      return;
-    }
-    showAuthError('');
-    authStatus.textContent = `已登入：${user.email || user.displayName || user.uid}`;
-    btnLogout.style.display = 'inline-block';
-
-    await ensureUserProfile(user);
-
-    // 讀審核狀態
-    const snap = await db.collection('users').doc(user.uid).get();
-    const approved = !!snap.data()?.approved;
-    approveHint.style.display = approved ? 'none' : 'block';
-    setStartEnabled(approved);
-  });
-</script>
-
-
   <body>
     <div class="container">
       <div class="start-screen">
         <h1 class="heading">Jimmy老師的文法題目練習系統</h1>
         <div class="settings">
-          <label for="user-name">請輸入你的名字:</label>
-          <input type="text" id="user-name" placeholder="輸入名字" />
+          <label for="user-name">請輸入你的名字：</label>
+          <input type="text" id="user-name" placeholder="輸入名字 (必填)" />
 
-          <label for="num-questions">題目數量:</label>
+          <label for="user-school">學校：</label>
+          <input type="text" id="user-school" placeholder="輸入學校 (選填)" />
+
+          <label for="user-grade">年級：</label>
+          <select id="user-grade">
+            <option value="">選擇年級 (選填)</option>
+            <option value="國一">國一</option>
+            <option value="國二">國二</option>
+            <option value="國三">國三</option>
+          </select>
+
+          <label for="num-questions">題目數量：</label>
           <select id="num-questions">
             <option value="5">5</option>
             <option value="10">10</option>
@@ -198,33 +46,16 @@ const firebaseConfig = {
             <option value="20">20</option>
             <option value="50">50</option>
           </select>
-          <label for="category">選擇文法:</label>
+
+          <label for="category">選擇文法：</label>
           <select id="category">
-            <!--<option value="">隨便</option>-->
             <option value="HanLinB2L3L4test">翰林版國一上第二次段考</option>
             <option value="HanLinB4L3L4test">翰林版國二上第二次段考</option>
-
-            <!--<option value="timeDay">What time/day的問法</option>-->
           </select>
-          <!--<label for="difficulty">Select difficulty:</label>
-          <select id="difficulty">
-            <option value="">any difficulty</option>
-            <option value="easy">easy</option>
-            <option value="medium">medium</option>
-            <option value="hard">hard</option>
-          </select>
-          <label for="time">Select time per question:</label>
-          <select id="time">
-            <option value="10">10 seconds</option>
-            <option value="15">15 seconds</option>
-            <option value="20">20 seconds</option>
-            <option value="25">25 seconds</option>
-            <option value="30">30 seconds</option>
-            <option value="60">60 seconds</option>
-          </select>-->
         </div>
         <button class="btn start">開始測驗</button>
       </div>
+
       <div class="quiz hide">
         <div class="timer">
           <div class="progress">
@@ -250,6 +81,7 @@ const firebaseConfig = {
         <button class="btn submit" disabled>確定提交</button>
         <button class="btn next">下一題</button>
       </div>
+
       <div class="end-screen hide">
         <h1 class="heading">Jimmy老師的文法題目練習系統</h1>
         <div class="score">
@@ -275,10 +107,51 @@ const firebaseConfig = {
         ></div>
         <button class="btn restart">重新測驗</button>
       </div>
+
+      <!-- 排行榜：使用 Google Sheet 資料 -->
+      <div
+        class="leaderboard-container"
+        style="
+          margin-top: 24px;
+          background: #151b3c;
+          border-radius: 12px;
+          padding: 16px;
+          color: #fff;
+        "
+      >
+        <h2 style="margin-bottom: 12px; font-size: 20px">目前排行榜</h2>
+        <table
+          class="leaderboard-table"
+          style="width: 100%; border-collapse: collapse; font-size: 14px"
+        >
+          <thead>
+            <tr>
+              <th style="border-bottom: 1px solid #2a335b; padding: 6px 4px">
+                名次
+              </th>
+              <th style="border-bottom: 1px solid #2a335b; padding: 6px 4px">
+                名字
+              </th>
+              <th style="border-bottom: 1px solid #2a335b; padding: 6px 4px">
+                學校
+              </th>
+              <th style="border-bottom: 1px solid #2a335b; padding: 6px 4px">
+                年級
+              </th>
+              <th style="border-bottom: 1px solid #2a335b; padding: 6px 4px">
+                分數
+              </th>
+            </tr>
+          </thead>
+          <tbody id="leaderboard-body">
+            <tr>
+              <td colspan="5" style="padding: 8px 4px">載入中...</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
 
-    <script src="script.js"></script>
-    <script src="custom.js"></script>
     <!-- 新增 AI Bot UI，不更動原本 HTML 結構 -->
     <div
       id="ai-bot-ui"

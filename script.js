@@ -15,31 +15,55 @@ const startBtn = document.querySelector(".start"),
   quiz = document.querySelector(".quiz"),
   startScreen = document.querySelector(".start-screen");
 
-let questions = [],
-  time = 30,
-  score = 0,
-  currentQuestion,
+let time = 30,
   timer;
+let questions = [];
+let currentQuestion = 1;
+let score = 0;
+let selectedCategory = "";
+let userName = ""; // 使用者名字
+let userAnswers = [];
 
-let selectedCategory = ""; // 類別顯示文字
-let userAnswers = [];      // 作答資料
-let userName = "";         // 使用者名字
-
+// === 開始測驗 ===
 const startQuiz = () => {
   const nameInput = document.querySelector("#user-name");
-  if (nameInput.value.trim() === "") {
+  if (!nameInput || nameInput.value.trim() === "") {
     alert("請輸入你的名字再開始測驗！");
     return;
   }
 
   // 記錄開始時間與顯示用類別文字
   window.__quizStartedAt = Date.now();
-  selectedCategory = category.options[category.selectedIndex]?.textContent || category.value;
+  selectedCategory =
+    category.options[category.selectedIndex]?.textContent || category.value;
 
   userName = nameInput.value.trim();
   console.log("userName:", userName, "selectedCategory:", selectedCategory);
 
   loadingAnimation();
+function loadingAnimation() {
+  if (!startBtn) return;
+  startBtn.disabled = true;
+  startBtn.textContent = "準備題目中…";
+
+  let dotCount = 0;
+  const maxDots = 3;
+
+  const intervalId = setInterval(() => {
+    if (!startBtn) {
+      clearInterval(intervalId);
+      return;
+    }
+    dotCount = (dotCount + 1) % (maxDots + 1);
+    const dots = "．".repeat(dotCount);
+    startBtn.textContent = "準備題目中" + dots;
+  }, 400);
+
+  // 約 1.5 秒後停止動畫（真正開始顯示題目）
+  setTimeout(() => {
+    clearInterval(intervalId);
+  }, 1500);
+}
 
   // 使用自訂題庫
   const cat = category.value;
@@ -52,7 +76,11 @@ const startQuiz = () => {
   } else if (cat === "timeDay") {
     questions = timeAndDayGrammarQuestions;
   } else {
-    questions = [...HanLinB2L3L4test, ...timeAndDayGrammarQuestions, ...HanLinB4L3L4test];
+    questions = [
+      ...HanLinB2L3L4test,
+      ...timeAndDayGrammarQuestions,
+      ...HanLinB4L3L4test,
+    ];
   }
   console.log("category value:", cat);
 
@@ -82,66 +110,39 @@ const showQuestion = (question) => {
   const answers = [...question.incorrect_answers, question.correct_answer];
   answersWrapper.innerHTML = "";
   const shuffledAnswers = answers.sort(() => Math.random() - 0.5);
-
-  const labels = ["(A)", "(B)", "(C)", "(D)"];
   shuffledAnswers.forEach((answer, index) => {
-    answersWrapper.innerHTML += `
-      <div class="answer">
-        <span class="text">${labels[index]} ${answer}</span>
-        <span class="checkbox">
-          <i class="fas fa-check"></i>
-        </span>
-      </div>
+    const div = document.createElement("div");
+    div.classList.add("answer");
+    div.innerHTML = `
+      <span class="text">(${String.fromCharCode(65 + index)}) ${answer}</span>
+      <span class="checkbox">
+        <i class="fas fa-check"></i>
+      </span>
     `;
+    answersWrapper.appendChild(div);
   });
 
-  questionNumber.innerHTML = `Question <span class="current">${
-    questions.indexOf(question) + 1
-  }</span>
-            <span class="total">/${questions.length}</span>`;
+  questionNumber.innerHTML = `
+    Question <span class="current">${currentQuestion}</span>
+    <span class="total">/${questions.length}</span>
+  `;
 
-  // 選項點擊
   const answersDiv = document.querySelectorAll(".answer");
   answersDiv.forEach((answer) => {
     answer.addEventListener("click", () => {
-      if (!answer.classList.contains("checked")) {
-        answersDiv.forEach((a) => a.classList.remove("selected"));
+      if (!answer.classList.contains("selected")) {
+        answersDiv.forEach((answer) =>
+          answer.classList.remove("selected")
+        );
         answer.classList.add("selected");
         submitBtn.disabled = false;
       }
     });
   });
-};
 
-/* 若要倒數計時，可復活這段
-const startTimer = (time) => {
-  timer = setInterval(() => {
-    if (time === 3) {
-      playAdudio("countdown.mp3");
-    }
-    if (time >= 0) {
-      progress(time);
-      time--;
-    } else {
-      checkAnswer();
-    }
-  }, 1000);
-};
-*/
-
-const loadingAnimation = () => {
-  startBtn.innerHTML = "Loading";
-  const loadingInterval = setInterval(() => {
-    if (!startBtn || startBtn.innerHTML == null) {
-      clearInterval(loadingInterval);
-      return;
-    }
-    if (startBtn.innerHTML.length === 10) {
-      startBtn.innerHTML = "Loading";
-    } else {
-      startBtn.innerHTML += ".";
-    }
-  }, 500);
+  submitBtn.style.display = "block";
+  nextBtn.style.display = "none";
+  submitBtn.disabled = true;
 };
 
 const submitBtn = document.querySelector(".submit"),
@@ -176,19 +177,25 @@ const checkAnswer = () => {
     isCorrect: userAnswer === currentQuestionData.correct_answer,
   });
 
-  // 標記正確/錯誤
   if (userAnswer === currentQuestionData.correct_answer) {
     score++;
-    if (selectedAnswer) selectedAnswer.classList.add("correct");
-  } else {
-    if (selectedAnswer) selectedAnswer.classList.add("wrong");
-    document.querySelectorAll(".answer").forEach((answer) => {
-      const answerText = answer.querySelector(".text").innerHTML.trim();
-      if (answerText.replace(/^\([A-D]\)\s/, "") === currentQuestionData.correct_answer) {
-        answer.classList.add("correct");
-      }
-    });
   }
+
+  showCorrectAnswer(currentQuestionData.correct_answer);
+};
+
+const showCorrectAnswer = (correctAnswer) => {
+  const answersDiv = document.querySelectorAll(".answer");
+
+  answersDiv.forEach((answer) => {
+    const text = answer.querySelector(".text").innerHTML.trim();
+    const pureText = text.replace(/^\([A-D]\)\s/, "");
+    if (pureText === correctAnswer) {
+      answer.classList.add("correct");
+    } else if (answer.classList.contains("selected")) {
+      answer.classList.add("wrong");
+    }
+  });
 
   submitBtn.style.display = "none";
   nextBtn.style.display = "block";
@@ -230,15 +237,16 @@ const showScore = () => {
     const isCorrectClass = answer.isCorrect ? "correct-answer" : "wrong-answer";
     answerDetails.innerHTML += `
       <div class="answer-detail ${isCorrectClass}">
-        <p><strong>Q${index + 1}:</strong> ${answer.question}</p>
-        <p><strong>你的回答:</strong> ${answer.userAnswer}</p>
-        <p><strong>正確解答:</strong> ${answer.correctAnswer}</p>
+        <p><strong>第 ${index + 1} 題</strong></p>
+        <p>${answer.question}</p>
+        <p>你的答案: ${answer.userAnswer}</p>
+        <p><strong>正確答案:</strong> ${answer.correctAnswer}</p>
       </div>
       <hr>
     `;
   });
 
-  // === 直接在原本 showScore() 結尾上傳到 Firestore ===
+  // === 組成要上傳後端的 payload ===
   const payload = {
     userName,
     category: document.querySelector("#category")?.value || "",
@@ -251,6 +259,8 @@ const showScore = () => {
       ? Math.round((Date.now() - window.__quizStartedAt) / 1000)
       : null,
   };
+
+  // 呼叫後端（此函式會在下面被我們實作，改成 Google Sheet）
   if (window.saveAttemptToFirestore) {
     window.saveAttemptToFirestore(payload).catch(console.error);
   } else {
@@ -263,27 +273,116 @@ restartBtn.addEventListener("click", () => {
   window.location.reload();
 });
 
-/*
-const playAdudio = (src) => {
-  const audio = new Audio(src);
-  audio.play();
-};
-*/
+// === Google Sheets 版成績上傳與排行榜 ===
+// 請將下面這個網址換成你自己的 Apps Script Web App URL
+// 例如：https://script.google.com/macros/s/XXXXXXXXXXXX/exec
+const SHEET_API_URL = "https://script.google.com/macros/s/AKfycbx1ZU48UYi1iILrA0u44lbOQT6-rmzPCAE3jGTDTKcTZwr17V3-p8gFGkfCxEE8pS9KUg/exec";
 
-// === Firestore 上傳 ===
-async function saveAttemptToFirestore(payload) {
-  const user = auth.currentUser;
-  if (!user) return alert("尚未登入");
+// 將成績寫入 Google 試算表
+async function saveScoreToSheet(payload) {
+  // 從頁面上讀取學生基本資料
+  const nameInput = document.getElementById("user-name");
+  const schoolInput = document.getElementById("user-school");
+  const gradeInput = document.getElementById("user-grade");
 
-  const userDoc = await db.collection('users').doc(user.uid).get();
-  if (!userDoc.exists || !userDoc.data().approved) {
-    alert("帳號尚未審核，不能上傳成績。");
+  const name = nameInput ? nameInput.value.trim() : "";
+  const school = schoolInput ? schoolInput.value.trim() : "";
+  const grade = gradeInput ? gradeInput.value.trim() : "";
+
+  if (!name) {
+    // 理論上在 startQuiz 已經檢查過一次
+    alert("請先輸入名字再開始測驗喔！");
+    throw new Error("缺少姓名");
+  }
+
+  const body = {
+    name,
+    school,
+    grade,
+    score: payload.score,
+    total: payload.total,
+    category: payload.category,
+    answers: payload.answers,
+  };
+
+  const res = await fetch(SHEET_API_URL, {
+    method: "POST",
+    // 使用 text/plain 以避免 CORS preflight
+    headers: { "Content-Type": "text/plain;charset=utf-8" },
+    body: JSON.stringify(body),
+  });
+
+  let data = {};
+  try {
+    data = await res.json();
+  } catch (e) {
+    // 如果不是 JSON，就忽略 parsing 錯誤
+  }
+
+  if (!res.ok || (data && data.error)) {
+    throw new Error((data && data.error) || "儲存成績失敗");
+  }
+}
+
+// 從 Google 試算表讀取排行榜
+async function loadLeaderboardFromSheet() {
+  const res = await fetch(SHEET_API_URL, { method: "GET" });
+  if (!res.ok) {
+    throw new Error("讀取排行榜失敗");
+  }
+  const rows = await res.json();
+  renderLeaderboard(rows);
+}
+
+// 將排行榜資料渲染到畫面
+function renderLeaderboard(rows) {
+  const tbody = document.getElementById("leaderboard-body");
+  if (!tbody) return;
+
+  tbody.innerHTML = "";
+
+  if (!Array.isArray(rows) || rows.length === 0) {
+    const tr = document.createElement("tr");
+    tr.innerHTML =
+      '<td colspan="5">目前還沒有任何成績，快來成為第一個上榜的人吧！</td>';
+    tbody.appendChild(tr);
     return;
   }
-  await db.collection('attempts').add({
-    uid: user.uid,
-    ...payload,
-    createdAt: firebase.firestore.FieldValue.serverTimestamp(),
-    appVersion: "quiz-v1"
+
+  rows.forEach((row, index) => {
+    const tr = document.createElement("tr");
+    const scoreText =
+      row.score != null && row.total != null
+        ? `${row.score} / ${row.total}`
+        : row.score != null
+        ? String(row.score)
+        : "";
+    tr.innerHTML = `
+      <td>${index + 1}</td>
+      <td>${row.name || ""}</td>
+      <td>${row.school || ""}</td>
+      <td>${row.grade || ""}</td>
+      <td>${scoreText}</td>
+    `;
+    tbody.appendChild(tr);
   });
 }
+
+// 取代原本的 Firestore 上傳函式，沿用同一個 hook 名稱
+window.saveAttemptToFirestore = async function (payload) {
+  try {
+    await saveScoreToSheet(payload);
+    await loadLeaderboardFromSheet();
+    console.log("成績已上傳到 Google 試算表並更新排行榜");
+  } catch (err) {
+    console.error(err);
+    alert("成績已計算，但上傳 Google 試算表失敗：" + err.message);
+  }
+};
+
+// 一進頁面就先載入排行榜
+document.addEventListener("DOMContentLoaded", () => {
+  loadLeaderboardFromSheet().catch((err) => {
+    console.warn("載入排行榜失敗：", err);
+  });
+});
