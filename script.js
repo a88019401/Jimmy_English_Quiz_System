@@ -23,24 +23,6 @@ let score = 0;
 let selectedCategory = "";
 let userName = ""; // 使用者名字
 let userAnswers = [];
-
-// === 開始測驗 ===
-const startQuiz = () => {
-  const nameInput = document.querySelector("#user-name");
-  if (!nameInput || nameInput.value.trim() === "") {
-    alert("請輸入你的名字再開始測驗！");
-    return;
-  }
-
-  // 記錄開始時間與顯示用類別文字
-  window.__quizStartedAt = Date.now();
-  selectedCategory =
-    category.options[category.selectedIndex]?.textContent || category.value;
-
-  userName = nameInput.value.trim();
-  console.log("userName:", userName, "selectedCategory:", selectedCategory);
-
-  loadingAnimation();
 function loadingAnimation() {
   if (!startBtn) return;
   startBtn.disabled = true;
@@ -64,6 +46,24 @@ function loadingAnimation() {
     clearInterval(intervalId);
   }, 1500);
 }
+// === 開始測驗 ===
+const startQuiz = () => {
+  const nameInput = document.querySelector("#user-name");
+  if (!nameInput || nameInput.value.trim() === "") {
+    alert("請輸入你的名字再開始測驗！");
+    return;
+  }
+
+  // 記錄開始時間與顯示用類別文字
+  window.__quizStartedAt = Date.now();
+  selectedCategory =
+    category.options[category.selectedIndex]?.textContent || category.value;
+
+  userName = nameInput.value.trim();
+  console.log("userName:", userName, "selectedCategory:", selectedCategory);
+
+  loadingAnimation();
+
 
   // 使用自訂題庫
   const cat = category.value;
@@ -262,7 +262,7 @@ const showScore = () => {
 
   // 呼叫後端（此函式會在下面被我們實作，改成 Google Sheet）
   if (window.saveAttemptToFirestore) {
-    window.saveAttemptToFirestore(payload).catch(console.error);
+    window.saveAttemptToFirestore(payload);
   } else {
     console.warn("saveAttemptToFirestore 未載入，先略過上傳");
   }
@@ -369,14 +369,26 @@ function renderLeaderboard(rows) {
 }
 
 // 取代原本的 Firestore 上傳函式，沿用同一個 hook 名稱
+// 取代原本的 saveAttemptToFirestore 寫法
 window.saveAttemptToFirestore = async function (payload) {
+  // 先專心處理「寫入成績」
   try {
     await saveScoreToSheet(payload);
-    await loadLeaderboardFromSheet();
-    console.log("成績已上傳到 Google 試算表並更新排行榜");
+    console.log("成績已成功寫入 Google 試算表");
   } catch (err) {
-    console.error(err);
-    alert("成績已計算，但上傳 Google 試算表失敗：" + err.message);
+    console.error("寫入 Google 試算表失敗：", err);
+    alert("成績已計算，但寫入 Google 試算表失敗：" + err.message);
+    return; // 寫入都失敗了，就不需要再更新排行榜
+  }
+
+  // 再來試著更新排行榜；就算這裡失敗，也不要說「上傳失敗」
+  try {
+    await loadLeaderboardFromSheet();
+    console.log("排行榜已更新");
+  } catch (err) {
+    console.warn("排行榜更新失敗（但成績已經寫進試算表）：", err);
+    // 視情況決定要不要提醒學生
+    // alert("成績已儲存，但排行榜暫時無法更新：" + err.message);
   }
 };
 
