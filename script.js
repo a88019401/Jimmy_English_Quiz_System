@@ -219,6 +219,8 @@ const showScore = () => {
   quiz.classList.add("hide");
   finalScore.innerHTML = score;
   totalScore.innerHTML = `/ ${questions.length}`;
+    // 剛進結算畫面時：先把「重新測驗」鎖起來，避免學生狂按
+  setRestartButtonState(false, "成績同步中…");
 
   // 顯示名字
   const userNameDisplay = document.querySelector(".user-name-display");
@@ -269,9 +271,20 @@ const showScore = () => {
 };
 
 const restartBtn = document.querySelector(".restart");
+
+// 統一控制「重新測驗」按鈕狀態的小工具
+function setRestartButtonState(enabled, label) {
+  if (!restartBtn) return;
+  restartBtn.disabled = !enabled;
+  if (label) restartBtn.textContent = label;
+}
+
+// 點擊重新測驗：重新整理頁面
 restartBtn.addEventListener("click", () => {
+  if (restartBtn.disabled) return; // 保險：真的 disabled 就不要動作
   window.location.reload();
 });
+
 
 // === Google Sheets 版成績上傳與排行榜 ===
 // 請將下面這個網址換成你自己的 Apps Script Web App URL
@@ -378,6 +391,10 @@ window.saveAttemptToFirestore = async function (payload) {
   } catch (err) {
     console.error("寫入 Google 試算表失敗：", err);
     alert("成績已計算，但寫入 Google 試算表失敗：" + err.message);
+        // 就算寫入失敗，也不要把學生困在這頁，放他回去重測
+
+    setRestartButtonState(true, "重新測驗");
+
     return; // 寫入都失敗了，就不需要再更新排行榜
   }
 
@@ -389,6 +406,9 @@ window.saveAttemptToFirestore = async function (payload) {
     console.warn("排行榜更新失敗（但成績已經寫進試算表）：", err);
     // 視情況決定要不要提醒學生
     // alert("成績已儲存，但排行榜暫時無法更新：" + err.message);
+  }finally {
+    // 無論成功或失敗，最後一定解鎖「重新測驗」按鈕
+    setRestartButtonState(true, "重新測驗");
   }
 };
 

@@ -219,7 +219,11 @@ select,input {
 .btn.next {
   display: none;
 }
-
+/* 讓被 disabled 的按鈕看起來灰灰的、不能按 */
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
 .end-screen .score {
   color: #fff;
   font-size: 25px;
