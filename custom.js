@@ -1,54 +1,487 @@
 
 
-  const timeAndDayGrammarQuestions = [
-    {
-      question: "A: _____did Amy go to bed last night? She looks so tired.<br>B: _____about 1:30 a.m. She stays up(熬夜) every day for a big test.",
-      correct_answer: "  What time；At",
-      incorrect_answers: ["  What day；On", "  What time; For", "  What day; ╳"]
-    },
-    {
-      question: "Rick: What _______ is your test today?<br>Shiny: It’s ___ two o’clock.",
-      correct_answer: "  time ; at",
-      incorrect_answers: ["  time ; x", "  day ; on", "  day ; x"]
-    },
-    {
-      question: "Anna: Isn’t it Tuesday?<br>Candice: No, it’s not.<br>Anna: _______________<br>Candice: It’s Monday.",
-      correct_answer: "  What day is it today?",
-      incorrect_answers: [
-        "  What day is your family day?",
-        "  What day is the sports day?",
-        "  What day is your birthday?"
-      ]
-    },
-    {
-      question: "A: What time is the ball game?<br>B: It is _______________ .",
-      correct_answer: "  at six twenty",
-      incorrect_answers: ["  six o’clock", "  six twenty", "  at twenty o’clock"]
-    },
-    {
-      question: "A: What day is the meeting?<br>B:_______________",
-      correct_answer: "  It’s next Monday.",
-      incorrect_answers: [
-        "  It’s in the morning.",
-        "  It’s in a big city.",
-        "  It’s a meeting with Mr. Wang"
-      ]
-    },
-    {
-      question: "Teresa’s favorite TV show is _____ 4 p.m. _____ Monday.",
-      correct_answer: "  at; on",
-      incorrect_answers: ["  at; ╳", "  this; ╳", "  on; at"]
-    },
-    {
-      question: "Helen: What day is New Year’s Day this year?<br>Brett: _____",
-      correct_answer: "  Isn’t it on Wednesday?",
-      incorrect_answers: [
-        "  Is it at one one?",
-        "  New Year’s Day is coming.",
-        "  We can go out together that day"
-      ]
-    }
-  ];
+
+const B5L3L4_all = [
+  {
+    question:
+      "I ________ Mr. Barr knows a lot of war stories, and he is happy to share them with people.",
+    correct_answer: "  was told",
+    incorrect_answers: ["  have told", "  told that", "  was telling"],
+    data_source: "Zhongshan 113",
+  },
+  {
+    question:
+      "Annie: Do you know where the next Olympics ________?<br>Meg: Sure, in Los Angeles.  Olympics 奧運",
+    correct_answer: "  will be held",
+    incorrect_answers: ["  is held", "  are held", "  have held"],
+    data_source: "Zhongshan 113",
+  },
+  {
+    question:
+      "This computer ________ to my dad by my grandpa 20 years ago. It ________ for 20 years.",
+    correct_answer: "  was given; has been used",
+    incorrect_answers: [
+      "  has given; has used",
+      "  is given; was used",
+      "  was giving; be used",
+    ],
+    data_source: "Zhongshan 113",
+  },
+  {
+    question:
+      "Cody and his friends can be seen ________ basketball at the playground every day after school.",
+    correct_answer: "  to play",
+    incorrect_answers: ["  play", "  plays", "  be playing"],
+    data_source: "Zhongshan 113",
+  },
+  {
+    question:
+      "Jackie broke his little brother’s favorite robot, and he didn’t know ________?",
+    correct_answer: "  how to fix it",
+    incorrect_answers: [
+      "  what to do it",
+      "  what should he do",
+      "  how he can do",
+    ],
+    data_source: "Zhongshan 113",
+  },
+  {
+    question:
+      "Julian didn’t remember _______ he turned off the computer or not before he left the office last night.",
+    correct_answer: "  whether",
+    incorrect_answers: ["  where", "  when", "  why"],
+    data_source: "Zhongshan 113",
+  },
+  {
+    question:
+      "Little Jimmy ________ by his grandmother during the day when both of his parents go to work.",
+    correct_answer: "  is taken care of",
+    incorrect_answers: [
+      "  takes care of",
+      "  has taken care of",
+      "  was taken care",
+    ],
+    data_source: "Zhongshan 113",
+  },
+  {
+    question:
+      "No one knows if Andy ________ another concert next year. If he ________, his fans will get crazy and excited!",
+    correct_answer: "  will have; does",
+    incorrect_answers: [
+      "  will have; will",
+      "  has; does",
+      "  has; has",
+    ],
+    data_source: "Zhongshan 113",
+  },
+  {
+    question:
+      "Choose the CORRECT sentence. (選出「正確」的句子。)",
+    correct_answer: "  Can anyone tell me what’s going on here?",
+    incorrect_answers: [
+      "  I’d like to know what is his name.",
+      "  Do you know who did he just call?",
+      "  I don’t understand why she look so mad.",
+    ],
+    data_source: "Zhongshan 113",
+  },
+  {
+    question:
+      "Choose the CORRECT sentence. (選出「正確」的句子。)",
+    correct_answer:
+      "  No one can know for sure how IoT will shape our lives.",
+    incorrect_answers: [
+      "  Radios don’t be used by people today.",
+      "  It has a list of your favorite songs, so it knows how to play.",
+      "  Try to understand these old people and provide them love and care.",
+    ],
+    data_source: "Zhongshan 113",
+  },  {
+    question:
+      "I want to buy a smartphone and a notebook. However, I can’t decide _____ first. I don’t have enough money for both.",
+    correct_answer: "  which to buy",
+    incorrect_answers: [
+      "  how to buy them",
+      "  where to buy them",
+      "  when to buy them",
+    ],
+    data_source: "Zhongshan 112",
+  },
+  {
+    question:
+      "Emily _____ the piano by John when he was ready to go home and passed the piano room after school.",
+    correct_answer: "  was seen playing",
+    incorrect_answers: [
+      "  saw to play",
+      "  saw playing",
+      "  is seen to play",
+    ],
+    data_source: "Zhongshan 112",
+  },
+  {
+    question:
+      "I wonder if Gabe ______ at Sunny Children’s Home tomorrow. If he does, we will bake cookies for the children together.",
+    correct_answer: "  will volunteer",
+    incorrect_answers: [
+      "  volunteers",
+      "  volunteered",
+      "  has volunteered",
+    ],
+    data_source: "Zhongshan 112",
+  },
+  {
+    question:
+      "When my family went on a vacation, my dog _____ well by the workers at Friendly Pets Hotel.",
+    correct_answer: "  was taken care of",
+    incorrect_answers: [
+      "  took care",
+      "  was taken care",
+      "  has taken care of",
+    ],
+    data_source: "Zhongshan 112",
+  },
+  {
+    question:
+      "Make sure _____ there are any eggs in the refrigerator. If not, please buy a dozen on your way home after work.",
+    correct_answer: "  whether",
+    incorrect_answers: [
+      "  that",
+      "  how many",
+      "  when",
+    ],
+    data_source: "Zhongshan 112",
+  },
+  {
+    question:
+      "The plastic waste problem is so serious that it _____ by one or two people. All of us must take action to help.",
+    correct_answer: "  won’t be solved",
+    incorrect_answers: [
+      "  won’t solve",
+      "  can be solved",
+      "  hasn’t solved",
+    ],
+    data_source: "Zhongshan 112",
+  },
+  {
+    question:
+      "Cody shared with his mom the amazing experience of _____ through VR in art class.",
+    correct_answer: "  what they did",
+    incorrect_answers: [
+      "  how they did",
+      "  how to do",
+      "  what did they do",
+    ],
+    data_source: "Zhongshan 112",
+  },
+  {
+    question:
+      "Tina doesn’t like _____ to do housework. Her mother often ends up doing most of it by herself.",
+    correct_answer: "  to be asked",
+    incorrect_answers: [
+      "  asked",
+      "  to ask",
+      "  be asked",
+    ],
+    data_source: "Zhongshan 112",
+  },
+  {
+    question:
+      "Iris: Can you tell me __________?<br>Henry: No problem, though it’s a long story. Let’s sit down and chat about it.",
+    correct_answer: "  what led to your successful business",
+    incorrect_answers: [
+      "  what make you a successful business",
+      "  how did you have a successful business",
+      "  what did it lead to your successful business",
+    ],
+    data_source: "Zhongshan 112",
+  },
+  {
+    question:
+      "In the kitchen, the cake _______ by my sister, and the good smell is filling the air. I can’t wait to taste it.",
+    correct_answer: "  is being made",
+    incorrect_answers: [
+      "  is making",
+      "  will make",
+      "  will be made",
+    ],
+    data_source: "Zhongshan 112",
+  },{
+    question:
+      "This sentence _________ me. Please explain it in Chinese.",
+    correct_answer: "  confuses",
+    incorrect_answers: ["  refuses", "  rejects", "  includes"],
+    data_source: "Renai 113-1 -2",
+  },
+  {
+    question:
+      "It is _______ for the museum to be this empty.",
+    correct_answer: "  rare",
+    incorrect_answers: ["  similar", "  certain", "  simple"],
+    data_source: "Renai 113-1 -2",
+  },
+  {
+    question:
+      "Jodi was angry because her name was _________ from the list.",
+    correct_answer: "  omitted",
+    incorrect_answers: ["  insisted", "  appeared", "  included"],
+    data_source: "Renai 113-1 -2",
+  },
+  {
+    question:
+      "Strangers aren’t allowed on this _______ land.",
+    correct_answer: "  private",
+    incorrect_answers: ["  available", "  ordinary", "  crowded"],
+    data_source: "Renai 113-1 -2",
+  },
+  {
+    question:
+      "_______ me, I didn’t hear you. Could you say it again?",
+    correct_answer: "  Pardon",
+    incorrect_answers: ["  Accept", "  Confuse", "  Reject"],
+    data_source: "Renai 113-1 -2",
+  },
+  {
+    question:
+      "Math is my _______ favorite subject at school because I’m so poor at it.",
+    correct_answer: "  least",
+    incorrect_answers: ["  even", "  rather", "  nearly"],
+    data_source: "Renai 113-1 -2",
+  },
+  {
+    question:
+      "It’s not _______ to charge a fee to use the toilet.",
+    correct_answer: "  usual",
+    incorrect_answers: ["  precious", "  glad", "  similar"],
+    data_source: "Renai 113-1 -2",
+  },
+  {
+    question:
+      "The school has 913 students _______.",
+    correct_answer: "  altogether",
+    incorrect_answers: ["  together", "  alone", "  ahead"],
+    data_source: "Renai 113-1 -2",
+  },
+  {
+    question:
+      "The workers were _______ as they listened to their boss.",
+    correct_answer: "  silent",
+    incorrect_answers: ["  sudden", "  sure", "  same"],
+    data_source: "Renai 113-1 -2",
+  },
+  {
+    question:
+      "You have the most experience; _______ , you should be the leader.",
+    correct_answer: "  therefore",
+    incorrect_answers: ["  finally", "  however", "  besides"],
+    data_source: "Renai 113-1 -2",
+  },
+
+  // III. Language Focus 21-29
+  {
+    question:
+      "The story ______ by Judy three times, hasn’t it?",
+    correct_answer: "  has been told",
+    incorrect_answers: ["  is told", "  was told", "  will be told"],
+    data_source: "Renai 113-1 -2",
+  },
+  {
+    question:
+      "Ed was so scared, and he didn’t know ______.",
+    correct_answer: "  what to do",
+    incorrect_answers: [
+      "  how to do",
+      "  how he has to do",
+      "  what should he do",
+    ],
+    data_source: "Renai 113-1 -2",
+  },
+  {
+    question:
+      "The car has to be washed, it?",
+    correct_answer: "  doesn’t",
+    incorrect_answers: ["  isn’t", "  hasn’t", "  won’t"],
+    data_source: "Renai 113-1 -2",
+  },
+  {
+    question:
+      "All the fans of Black Pink want to know ____________________.",
+    correct_answer: "  when the concert will be held",
+    incorrect_answers: [
+      "  when the concert will hold",
+      "  when will the concert hold",
+      "  when will the concert be held",
+    ],
+    data_source: "Renai 113-1 -2",
+  },
+  {
+    question:
+      "I don’t know if Tommy ______ to the party later, but if he ______, I’ll tell him the news.",
+    correct_answer: "  will come; does",
+    incorrect_answers: [
+      "  comes; does",
+      "  will come; will",
+      "  comes; will come",
+    ],
+    data_source: "Renai 113-1 -2",
+  },
+  {
+    question:
+      "The song ______ by Tina when I entered the shop.",
+    correct_answer: "  was being played",
+    incorrect_answers: ["  is playing", "  is being played", "  was playing"],
+    data_source: "Renai 113-1 -2",
+  },
+  {
+    question:
+      "There are few green leaves in the maple tree, ______?",
+    correct_answer: "  are there",
+    incorrect_answers: ["  are they", "  aren’t they", "  aren’t there"],
+    data_source: "Renai 113-1 -2",
+  },
+  {
+    question:
+      "The computer ______ by my grandpa for five years, but it doesn’t work now.",
+    correct_answer: "  was used",
+    incorrect_answers: ["  is used", "  will be used", "  has been used"],
+    data_source: "Renai 113-1 -2",
+  },
+  {
+    question:
+      "Which sentence is correct?",
+    correct_answer: "  Do you know what’s wrong with the computer?",
+    incorrect_answers: [
+      "  Nobody knows where did Mike go.",
+      "  Aunt Beth happened an accident last night.",
+      "  Has Tim told you what did he do?",
+    ],
+    data_source: "Renai 113-1 -2",
+  },  {
+    question:
+      "A: Isn’t this movie ______ to you?<br>B: No, not at all.",
+    correct_answer: "  interesting",
+    incorrect_answers: ["  interested", "  interest", "  interests"],
+    data_source: "taipei Xin Xing 110-1 -2",
+  },
+  {
+    question:
+      "A: Guess what? Mike passed the exam.<br>B: Wow! How ______!",
+    correct_answer: "  surprising",
+    incorrect_answers: ["  embarrassed", "  interested", "  tiring"],
+    data_source: "taipei Xin Xing 110-1 -2",
+  },
+  {
+    question:
+      "They’re surprised ______ Kevin’s been to America so many times.",
+    correct_answer: "  that",
+    incorrect_answers: ["  with", "  at", "  about"],
+    data_source: "taipei Xin Xing 110-1 -2",
+  },
+  {
+    question:
+      "I don’t know ______ happened this morning.",
+    correct_answer: "  what",
+    incorrect_answers: ["  when", "  how", "  X"],
+    data_source: "taipei Xin Xing 110-1 -2",
+  },
+  {
+    question:
+      "Tell me ______.",
+    correct_answer: "  what to do",
+    incorrect_answers: [
+      "  which music to listen",
+      "  how to do",
+      "  what is the topic",
+    ],
+    data_source: "taipei Xin Xing 110-1 -2",
+  },
+  {
+    question:
+      "We have no idea ______ wrong with Ann.",
+    correct_answer: "  what’s",
+    incorrect_answers: ["  how’s", "  who’s", "  where’s"],
+    data_source: "taipei Xin Xing 110-1 -2",
+  },
+  {
+    question:
+      "Does anyone know ______?",
+    correct_answer: "  who that boy is",
+    incorrect_answers: [
+      "  who is that boy",
+      "  who that is a boy",
+      "  who boy that is",
+    ],
+    data_source: "taipei Xin Xing 110-1 -2",
+  },
+  {
+    question:
+      "He isn’t sure ______ his wife will buy for their dinner tonight.",
+    correct_answer: "  what",
+    incorrect_answers: ["  where", "  X", "  whether"],
+    data_source: "taipei Xin Xing 110-1 -2",
+  },
+  {
+    question:
+      "I forgot ______ playing tennis is easy for Emily or not.",
+    correct_answer: "  whether",
+    incorrect_answers: ["  that", "  when", "  what"],
+    data_source: "taipei Xin Xing 110-1 -2",
+  },
+  {
+    question:
+      "If it ______ rainy tomorrow, we won’t go picnicking.",
+    correct_answer: "  is",
+    incorrect_answers: ["  will be", "  will have", "  is going to"],
+    data_source: "taipei Xin Xing 110-1 -2",
+  },
+  {
+    question:
+      "The students are all excited ______ the coming trip.",
+    correct_answer: "  about",
+    incorrect_answers: ["  with", "  of", "  in"],
+    data_source: "taipei Xin Xing 110-1 -2",
+  },
+  {
+    question:
+      "When you see something strange on the Net, fact-check it and ______.",
+    correct_answer: "  don’t be fooled",
+    incorrect_answers: [
+      "  not be fooled",
+      "  not to be fooled",
+      "  isn’t be fooled",
+    ],
+    data_source: "taipei Xin Xing 110-1 -2",
+  },
+  {
+    question:
+      "A: I wonder ______ Tom gave up his former (之前) job.<br>B: He gave it up to make a movie.",
+    correct_answer: "  why",
+    incorrect_answers: ["  how", "  where", "  when"],
+    data_source: "taipei Xin Xing 110-1 -2",
+  },
+  {
+    question:
+      "A: We need to choose a leader today.<br>B: I think Alice is the perfect person.",
+    correct_answer: "  Do you have anyone in mind?",
+    incorrect_answers: [
+      "  Are we all on the same page?",
+      "  What are you interested in?",
+      "  I really know who is perfect for the job.",
+    ],
+    data_source: "taipei Xin Xing 110-1 -2",
+  },
+  {
+    question:
+      "A: ____________________<br>B: Yes, I have, and you can see the most beautiful sights over there.",
+    correct_answer: "  Have you ever been to Jade Mountain National Park?",
+    incorrect_answers: [
+      "  Can you tell me how to get to Jade Mountain National Park?",
+      "  Do you know if it’s easy to get to Jade Mountain National Park?",
+      "  Have you heard about the story about Jade Mountain?",
+    ],
+    data_source: "taipei Xin Xing 110-1 -2",
+  },
+];
+
 
   const HanLinB2L3L4 = [
     {
@@ -105,13 +538,13 @@
     },
     {
       question: "That singer’s meet-and-greet is ______ ten ______ Saturday morning.",
-      correct_answer: "  on; at",
-      incorrect_answers: ["  on; on", "  at; at", "  at; on"]
+      correct_answer: "  at; on",
+      incorrect_answers: ["  on; on", "  at; at", "  on; at"]
     },
     {
       question: "A: What day is the basketball game?<br>B: It’s ______ this Tuesday.",
-      correct_answer: "  on",
-      incorrect_answers: ["  at", "  X", "  in"]
+      correct_answer: "  X",
+      incorrect_answers: ["  at", "  on", "  in"]
     },
     {
       question: "A: What are you doing?<br>B: ______.",
@@ -288,11 +721,6 @@
       incorrect_answers: ["  to", "  for", "  at"]
     },
     {
-      question: "The show is at six p.m. Let’s ______ late.",
-      correct_answer: "  not",
-      incorrect_answers: ["  don’t", "  no", "  not be"]
-    },
-    {
       question: "A: ______<br>B: He can sing.",
       correct_answer: "  What can he do?",
       incorrect_answers: ["  Who can do this?", "  Where can he go?", "  What can he sing?"]
@@ -399,10 +827,7 @@
       incorrect_answers: ["  to", "  for", "  at"]
     },
     {
-      question: "The show is at six p.m. Let’s ______ late.",
-      correct_answer: "  not be",
-      incorrect_answers: ["  not", "  don’t", "  no"]
-    },
+
     {
       question: "A: ______<br>B: He can sing.",
       correct_answer: "  What can he do?",
@@ -796,11 +1221,7 @@
     correct_answer: "  Try; making",
     incorrect_answers: ["  Enjoy; make", "  Trying; making", "  To enjoy; to make"]
   },
-  {
-    question: "A windy October is a great time for ___________ kites with the kids in your family.",
-    correct_answer: "  to fly",
-    incorrect_answers: ["  fly", "  flying", "  flies"]
-  }
+
 
   ];
   

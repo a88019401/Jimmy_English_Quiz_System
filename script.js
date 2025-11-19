@@ -71,15 +71,14 @@ const startQuiz = () => {
     questions = HanLinB2L3L4;
   } else if (cat === "HanLinB4L3L4test") {
     questions = HanLinB4L3L4;
-  } else if (cat === "vocabulary") {
-    questions = vocabularyQuestions;
+  } else if (cat === "B5L3L4test") {
+    questions = B5L3L4_all;
   } else if (cat === "timeDay") {
     questions = timeAndDayGrammarQuestions;
   } else {
     questions = [
-      ...HanLinB2L3L4test,
-      ...timeAndDayGrammarQuestions,
-      ...HanLinB4L3L4test,
+      ...HanLinB2L3L4,
+      ...HanLinB4L3L4,
     ];
   }
   console.log("category value:", cat);
