@@ -67,10 +67,10 @@ const startQuiz = () => {
 
   // 使用自訂題庫
   const cat = category.value;
-  if (cat === "HanLinB2L3L4test") {
-    questions = HanLinB2L3L4;
-  } else if (cat === "HanLinB4L3L4test") {
-    questions = HanLinB4L3L4;
+  if (cat === "HanLinB1L3L4test") {
+    questions = B1L3L4_hinLin;
+  } else if (cat === "HanLinB3L3L4test") {
+    questions = B3L3L4_hinLin;
   } else if (cat === "B5L3L4test") {
     questions = B5L3L4_all;
   } else if (cat === "timeDay") {

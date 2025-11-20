@@ -96,7 +96,7 @@ const B5L3L4_all = [
       "  Try to understand these old people and provide them love and care.",
     ],
     data_source: "Zhongshan 113",
-  },  {
+  }, {
     question:
       "I want to buy a smartphone and a notebook. However, I can’t decide _____ first. I don’t have enough money for both.",
     correct_answer: "  which to buy",
@@ -205,7 +205,7 @@ const B5L3L4_all = [
       "  will be made",
     ],
     data_source: "Zhongshan 112",
-  },{
+  }, {
     question:
       "This sentence _________ me. Please explain it in Chinese.",
     correct_answer: "  confuses",
@@ -355,7 +355,7 @@ const B5L3L4_all = [
       "  Has Tim told you what did he do?",
     ],
     data_source: "Renai 113-1 -2",
-  },  {
+  }, {
     question:
       "A: Isn’t this movie ______ to you?<br>B: No, not at all.",
     correct_answer: "  interesting",
@@ -482,458 +482,811 @@ const B5L3L4_all = [
   },
 ];
 
+const B3L3L4_hinLin = [
+  // Source: 111-1-2 8英語 考題.docx (New Taipei City Zhongshan Junior High School)
+  {
+    question: "Grace was feeding her baby when someone _______ the doorbell.",
+    correct_answer: "rang",
+    incorrect_answers: ["was ringing", "is ringing", "rings"],
+    data_source: "New Taipei Zhongshan 111-1-2 [cite: 1, 67]"
+  },
+  {
+    question: "Adam: Hurry up! The talk show is from 5:00-6:45. Eve: Oh, no! We are late. It’s ten _______ 5 now.",
+    correct_answer: "past",
+    incorrect_answers: ["to", "at", "before"],
+    data_source: "New Taipei Zhongshan 111-1-2 [cite: 1, 67]"
+  },
+  {
+    question: "Teacher: Hey, class. Try _______ only for tests, or you will lose interests in it. Class: Okay.",
+    correct_answer: "not to study",
+    incorrect_answers: ["don’t study", "not study", "to study"],
+    data_source: "New Taipei Zhongshan 111-1-2 [cite: 1, 67]"
+  },
+  {
+    question: "Daren: _______ climbing up a tree fun for Peter? Cathy: I think so.",
+    correct_answer: "Is",
+    incorrect_answers: ["Does", "Has", "Have"],
+    data_source: "New Taipei Zhongshan 111-1-2 [cite: 1, 67]"
+  },
+  {
+    question: "Anna couldn’t go to school because _______ Covid-19, but she didn’t want to give up _______. She signed up for some online classes.",
+    correct_answer: "of; learning",
+    incorrect_answers: ["X; to learn", "X; learning", "of; to learn"],
+    data_source: "New Taipei Zhongshan 111-1-2 [cite: 1, 67]"
+  },
+  {
+    question: "Betty: Who does Owen _______ playing the violin with? Tracy: His cousin.",
+    correct_answer: "love",
+    incorrect_answers: ["want", "hope", "need"],
+    data_source: "New Taipei Zhongshan 111-1-2 [cite: 1, 67]"
+  },
+  {
+    question: "I didn’t say goodbye to you when I left because you _______ on the phone.",
+    correct_answer: "were talking",
+    incorrect_answers: ["talk", "are talking", "talked"],
+    data_source: "New Taipei Zhongshan 111-1-2 [cite: 1, 67]"
+  },
+  {
+    question: "_______ in the pool and _______ a glass of iced tea by the pool are my favorite things to do on hot summer days.",
+    correct_answer: "To swim; to enjoy",
+    incorrect_answers: ["To swim; enjoying", "Swim; enjoy", "Swimming; to enjoy"],
+    data_source: "New Taipei Zhongshan 111-1-2 [cite: 1, 67]"
+  },
+  {
+    question: "The children didn’t stop _______ with each other, so their mom decided _______ them some punishment (處罰).",
+    correct_answer: "fighting; to give",
+    incorrect_answers: ["fighting; giving", "to fight; giving", "to fight; to give"],
+    data_source: "New Taipei Zhongshan 111-1-2 [cite: 1, 67]"
+  },
+  {
+    question: "Sara: What do kids usually do on Halloween in America? Tim: They put on _______ and _______ from door to door to ask for some chocolate and candies",
+    correct_answer: "masks; go trick-or-treating",
+    incorrect_answers: ["masks; go to a haunted house", "costumes; cut out seeds", "pumpkins; make a jack-o’-lantern"],
+    data_source: "New Taipei Zhongshan 111-1-2 [cite: 1, 67]"
+  },
+  {
+    question: "Tina: __________ Joel: Nobody. An earthquake just happened.",
+    correct_answer: "Who broke my cellphone?",
+    incorrect_answers: ["What was Joel doing then?", "Whose cellphone is this?", "Who bought this cellphone?"],
+    data_source: "New Taipei Zhongshan 111-1-2 [cite: 1, 67]"
+  },
+  {
+    question: "Mary: It’s a long day. After working for 10 hours, I think it’s time to __________. John: Yes. You should go to bed.",
+    correct_answer: "hit the sack",
+    incorrect_answers: ["have a frog in my throat", "make up your mind", "fight for people’s rights"],
+    data_source: "New Taipei Zhongshan 111-1-2 [cite: 1, 67]"
+  },
 
-  const HanLinB2L3L4 = [
-    {
-      question: "A: _____did Amy go to bed last night? She looks so tired.<br>B: _____about 1:30 a.m. She stays up(熬夜) every day for a big test.",
-      correct_answer: "  What time；At",
-      incorrect_answers: ["  What day；On", "  What time; For", "  What day; ╳"]
-    },
-    {
-      question: "Rick: What _______ is your test today?<br>Shiny: It’s ___ two o’clock.",
-      correct_answer: "  time ; at",
-      incorrect_answers: ["  time ; x", "  day ; on", "  day ; x"]
-    },
-    {
-      question: "Anna: Isn’t it Tuesday?<br>Candice: No, it’s not.<br>Anna: _______________<br>Candice: It’s Monday.",
-      correct_answer: "  What day is it today?",
-      incorrect_answers: [
-        "  What day is your family day?",
-        "  What day is the sports day?",
-        "  What day is your birthday?"
-      ]
-    },
-    {
-      question: "A: What time is the ball game?<br>B: It is _______________ .",
-      correct_answer: "  at six twenty",
-      incorrect_answers: ["  six o’clock", "  six twenty", "  at twenty o’clock"]
-    },
-    {
-      question: "A: What day is the meeting?<br>B:_______________",
-      correct_answer: "  It’s next Monday.",
-      incorrect_answers: [
-        "  It’s in the morning.",
-        "  It’s in a big city.",
-        "  It’s a meeting with Mr. Wang"
-      ]
-    },
-    {
-      question: "Teresa’s favorite TV show is _____ 4 p.m. _____ Monday.",
-      correct_answer: "  at; on",
-      incorrect_answers: ["  at; ╳", "  this; ╳", "  on; at"]
-    },
-    {
-      question: "Helen: What day is New Year’s Day this year?<br>Brett: _____",
-      correct_answer: "  Isn’t it on Wednesday?",
-      incorrect_answers: [
-        "  Is it at one one?",
-        "  New Year’s Day is coming.",
-        "  We can go out together that day"
-      ]
-    }
-    ,{
-      question: "A: What ______ is it?<br>B: It’s five seventeen.",
-      correct_answer: "  What time",
-      incorrect_answers: ["  How", "  How old", "  What day"]
-    },
-    {
-      question: "That singer’s meet-and-greet is ______ ten ______ Saturday morning.",
-      correct_answer: "  at; on",
-      incorrect_answers: ["  on; on", "  at; at", "  on; at"]
-    },
-    {
-      question: "A: What day is the basketball game?<br>B: It’s ______ this Tuesday.",
-      correct_answer: "  X",
-      incorrect_answers: ["  at", "  on", "  in"]
-    },
-    {
-      question: "A: What are you doing?<br>B: ______.",
-      correct_answer: "  We are writing a report.",
-      incorrect_answers: ["  We are free.", "  You can sing here.", "  The report is ready."]
-    },
-    {
-      question: "A: What day is it today?<br>B: ______.",
-      correct_answer: "  Isn’t it Monday?",
-      incorrect_answers: ["  It’s on Sunday.", "  It’s six o’clock.", "  It’s a good day."]
-    },
-    {
-      question: "Look! Ellen’s sister ______ now. She is a good singer.",
-      correct_answer: "  is singing",
-      incorrect_answers: ["  singing", "  are singing", "  sing"]
-    },
-    {
-      question: "My two-year-old daughter can draw ______ a marker.",
-      correct_answer: "  with",
-      incorrect_answers: ["  to", "  for", "  at"]
-    },
-    {
-      question: "The show is at six p.m. Let’s ______ late.",
-      correct_answer: "  not be",
-      incorrect_answers: ["  don’t", "  no", "  not"]
-    },
-    {
-      question: "A: ______<br>B: He can sing.",
-      correct_answer: "  What can he do?",
-      incorrect_answers: ["  Who can do this?", "  Where can he go?", "  What can he sing?"]
-    },
-    {
-      question: "A: Is Jenny at home?<br>B: Maybe she is. Her bag is on the sofa.",
-      correct_answer: "  I’m not sure.",
-      incorrect_answers: ["  Look at the sign.", "  Where is she now?", "  Please write down her name."]
-    },
-    {
-      question: "A: ______<br>B: Sorry, I can’t. It’s your turn.",
-      correct_answer: "  Can you wash the dog for me?",
-      incorrect_answers: ["  Can you see me?", "  Can you wait for me here?", "  Can you wait for your turn?"]
-    },
-    {
-      question: "Look at the picture on the right. The truck drivers delivered ________ and made sure they were fine.",
-      correct_answer: "  goods",
-      incorrect_answers: ["  channels", "  soldiers", "  success"]
-    },
-    {
-      question: "King: Excuse me. I really have to go now. My son ______ for me at home.<br>Kelly: Sure, no problem. See you tomorrow!",
-      correct_answer: "  is waiting",
-      incorrect_answers: ["  was waiting", "  waits", "  waited"]
-    },
-    {
-      question: "Ray _______ a shower when someone turned off the light. He was nervous and shouted for help.",
-      correct_answer: "  was taking",
-      incorrect_answers: ["  took", "  is taking", "  takes"]
-    },
-    {
-      question: "Alien Huang, a famous singer in Taiwan, ______ on September 16th, 2020. Many people still can’t believe it.",
-      correct_answer: "  died",
-      incorrect_answers: ["  was dying", "  dies", "  die"]
-    },
-    {
-      question: "Mr. Lin: Tim, why did you come to school so early today?<br>Tim: I didn’t finish _______ math, so I woke up early to prepare for the test.",
-      correct_answer: "  studying",
-      incorrect_answers: ["  to study", "  studied", "  study"]
-    },
-    {
-      question: "It’s important not to eat junk food. Eating more vegetables _______ you healthy.",
-      correct_answer: "  keeps",
-      incorrect_answers: ["  keep", "  keeping", "  to keep"]
-    },
-    {
-      question: "Kidd: Are you excited about the camping next February?<br>Joanne: Of course! _____ always fun to go out with everybody.",
-      correct_answer: "  It is",
-      incorrect_answers: ["  That is", "  There is", "  I am"]
-    },
-    {
-      question: "When Mr. Chung was young, ________ baseball was his favorite hobby. Now, he is still a big fan of Brothers.",
-      correct_answer: "  watching",
-      incorrect_answers: ["  watch", "  watched", "  watches"]
-    },
-    {
-      question: "The English singing contest is coming next week. We need ________ after school.",
-      correct_answer: "  to practice",
-      incorrect_answers: ["  practicing", "  to be practiced", "  practiced"]
-    },
-    {
-      question: "Eric: Did you watch the movie Demon Slayer: Mugen Train? It was on TV at ________ this afternoon.<br>Evelyn: No I didn’t. I studied at the library all afternoon. When I left, it was already ten to eight.",
-      correct_answer: "  five to ten",
-      incorrect_answers: ["  five to twelve", "  half past nine", "  half past five"]
-    },{
-      question: "Peter’s eyesight isn’t very good. He ________ see the words on the blackboard in the back of the classroom.",
-      correct_answer: "  can’t",
-      incorrect_answers: ["  can", "  isn’t", "  not"]
-    },
-    {
-      question: "My dear friend, _________ a good time at today’s Halloween party.",
-      correct_answer: "  have",
-      incorrect_answers: ["  is having", "  having", "  is playing"]
-    },
-    {
-      question: "Everyone at the concert ______ so happy. They are waving their cellphones and singing with the band.",
-      correct_answer: "  is",
-      incorrect_answers: ["  are", "  isn’t", "  aren’t"]
-    },
-    {
-      question: "Miss Yu: Wake Kevin up. He is sleeping in class again.<br>Jason: OK. Let me wake________up.",
-      correct_answer: "  him",
-      incorrect_answers: ["  it", "  her", "  he"]
-    },
-    {
-      question: "_______, look at your teacher and listen to her. Time for class.",
-      correct_answer: "  Boys and girls",
-      incorrect_answers: ["  Don’t", "  Let’s", "  Please"]
-    },
-    {
-      question: "The cartoon “SLAM DUNK” is on TV ______ Monday______ Friday. I watch it every evening.<br> cartoon 卡通",
-      correct_answer: "  from; to",
-      incorrect_answers: ["  at; in", "  on; on", "  on; from"]
-    },
-    {
-      question: "Look! The famous singer, Avril, ______ hands with her fans on the stage.  famous 有名的",
-      correct_answer: "  is shaking",
-      incorrect_answers: ["  shaking", "  are shaking", "  shake"]
-    },
-    {
-      question: "Tina: Jenny and I are going to see a movie twenty minutes later. Are you coming together?<br>Tom: OK, I am free now. _______ meet her at the park. It’s near her house. She can get there very soon.",
-      correct_answer: "  Let’s",
-      incorrect_answers: ["  Please don’t", "  Let’s not", "  Don’t"]
-    },
-    {
-      question: "Alice: Are you free ________?<br>Milly: Yes, I am. Do you have any good ideas?",
-      correct_answer: "  today",
-      incorrect_answers: ["  your birthday", "  eight p.m.", "  ten o’clock"]
-    },
-    {
-      question: "Benson: What are you ______________?<br>Willy: My favorite song “Beautiful Sunday.”",
-      correct_answer: "  listening to",
-      incorrect_answers: ["  drawing", "  using", "  looking at"]
-    },
-    {
-      question: "A: What ______ is it?<br>B: It’s five seventeen.",
-      correct_answer: "  What time",
-      incorrect_answers: ["  How", "  How old", "  What day"]
-    },
-    {
-      question: "That singer’s meet-and-greet is ______ ten ______ Saturday morning.",
-      correct_answer: "  on; at",
-      incorrect_answers: ["  on; on", "  at; at", "  at; on"]
-    },
-    {
-      question: "A: What day is the basketball game?<br>B: It’s ______ this Tuesday.",
-      correct_answer: "  on",
-      incorrect_answers: ["  at", "  X", "  in"]
-    },
-    {
-      question: "A: What are you doing?<br>B: ______.",
-      correct_answer: "  We are writing a report.",
-      incorrect_answers: ["  We are free.", "  You can sing here.", "  The report is ready."]
-    },
-    {
-      question: "A: What day is it today?<br>B: ______.",
-      correct_answer: "  Isn’t it Monday?",
-      incorrect_answers: ["  It’s on Sunday.", "  It’s six o’clock.", "  It’s a good day."]
-    },
-    {
-      question: "Look! Ellen’s sister ______ now. She is a good singer.",
-      correct_answer: "  is singing",
-      incorrect_answers: ["  singing", "  are singing", "  sing"]
-    },
-    {
-      question: "My two-year-old daughter can draw ______ a marker.",
-      correct_answer: "  with",
-      incorrect_answers: ["  to", "  for", "  at"]
-    },
-    {
-      question: "A: ______<br>B: He can sing.",
-      correct_answer: "  What can he do?",
-      incorrect_answers: ["  Who can do this?", "  Where can he go?", "  What can he sing?"]
-    },
-    {
-      question: "A: Is Jenny at home?<br>B: Maybe she is. Her bag is on the sofa.",
-      correct_answer: "  I’m not sure.",
-      incorrect_answers: ["  Look at the sign.", "  Where is she now?", "  Please write down her name."]
-    },
-    {
-      question: "A: ______<br>B: Sorry, I can’t. It’s your turn.",
-      correct_answer: "  Can you wash the dog for me?",
-      incorrect_answers: ["  Can you see me?", "  Can you wait for me here?", "  Can you wait for your turn?"]
-    },
-    {
-      question: "Look at the picture on the right. The truck drivers delivered ________ and made sure they were fine.",
-      correct_answer: "  goods",
-      incorrect_answers: ["  channels", "  soldiers", "  success"]
-    }, {
-      question: "The Browns _____ in the living room when(當…) the mailman rang the doorbell yesterday.",
-      correct_answer: "  were watching TV",
-      incorrect_answers: ["  watch TV", "  watching TV", "  are watching TV"]
-    },
-    {
-      question: "Stop _____ here, boys. You are giving me a headache. Now, go back to your room and read some books.",
-      correct_answer: "  shouting",
-      incorrect_answers: ["  to shout", "  shout", "  shouted"]
-    },
-    {
-      question: "Everyone _____ for the relay race (大隊接力) because we all want to win.",
-      correct_answer: "  keeps practicing",
-      incorrect_answers: ["  need to practice", "  keep to practice", "  needs practicing"]
-    },
-    {
-      question: "_____ up now. It’s seven thirty, and you are late for school again.",
-      correct_answer: "  Get",
-      incorrect_answers: ["  Getting", "  To get", "  Gets"]
-    },
-    {
-      question: "_____ up early tomorrow morning, you need to go to bed now.",
-      correct_answer: "  To get",
-      incorrect_answers: ["  Getting", "  Get", "  Gets"]
-    },
-    {
-      question: "_____ up early on cold days is not easy for my little brother.",
-      correct_answer: "  Getting",
-      incorrect_answers: ["  Get", "  To getting", "  Gets"]
-    },
-    {
-      question: "Mom: It’s time for bed, Dan. Go brush your teeth and _____.<br>Dan: OK, Mom.",
-      correct_answer: "  hit the sack",
-      incorrect_answers: ["  hit the books", "  hit the road", "  hit the bottle"]
-    },
-    {
-      question: "Choose the CORRECT sentence. (選出正確的句子).",
-      correct_answer: "  J.K. Rowling’s books are popular all over the world.",
-      incorrect_answers: [
-        "  John hurted his right hand yesterday.",
-        "  He needs to eat the medicine three times a day.",
-        "  The water isn’t enough clean. Don’t drink it."
-      ]
-    },
-    {
-      question: "A: ______ is it?<br>B: It’s five seventeen.",
-      correct_answer: "  What time",
-      incorrect_answers: ["  How", "  How old", "  What day"]
-    },
-    {
-      question: "That singer’s meet-and-greet is ______ ten ______ Saturday morning.",
-      correct_answer: "  at; on",
-      incorrect_answers: ["  on; on", "  at; at", "  on; at"]
-    },
-    {
-      question: "A: What day is the basketball game?<br>B: It’s ______ this Tuesday.",
-      correct_answer: "  X",
-      incorrect_answers: ["  on", "  at", "  in"]
-    },
-    {
-      question: "A: What are you doing?<br>B: ______.",
-      correct_answer: "  We are writing a report.",
-      incorrect_answers: [
-        "  We are free.",
-        "  You can sing here.",
-        "  The report is ready."
-      ]
-    },
-    {
-      question: "A: What day is it today?<br>B: ______.",
-      correct_answer: "  Isn’t it Monday?",
-      incorrect_answers: [
-        "  It’s on Sunday.",
-        "  It’s six o’clock.",
-        "  It’s a good day."
-      ]
-    },
-    {
-      question: "Look! Ellen’s sister ______ now. She is a good singer.",
-      correct_answer: "  is singing",
-      incorrect_answers: ["  singing", "  are singing", "  sing"]
-    },
-    {
-      question: "My two-year-old daughter can draw ______ a marker.",
-      correct_answer: "  with",
-      incorrect_answers: ["  to", "  for", "  at"]
-    },
-    {
+  // Source: 112-1-2-8英語.docx (New Taipei City Zhongshan Junior High School)
+  {
+    question: "Look at the picture. What is the man doing? [Image: Man sweeping stairs]",
+    correct_answer: "He is sweeping the stairs.",
+    incorrect_answers: ["He is wiping the table.", "He is feeding the pet.", "He is taking out the trash."],
+    data_source: "New Taipei Zhongshan 112-1-2 [cite: 111, 118]"
+  },
+  {
+    question: "My family were having dinner when the bad guy __________ in the restaurant. I often think of that scary moment now.",
+    correct_answer: "went",
+    incorrect_answers: ["goes", "is going", "was going"],
+    data_source: "New Taipei Zhongshan 112-1-2 [cite: 111, 118]"
+  },
+  {
+    question: "Samuel: Start your car now. The show is at 7:20. We’re late. Roger: Be cool! It’s __________. We have thirty minutes before it starts.",
+    correct_answer: "ten to seven",
+    incorrect_answers: ["twenty after six", "a quarter to eight", "seven o’clock"],
+    data_source: "New Taipei Zhongshan 112-1-2 [cite: 111, 118]"
+  },
+  {
+    question: "__________ a lot of fun for students to camp in the mountains with classmates or friends.",
+    correct_answer: "It is",
+    incorrect_answers: ["They are", "This is", "We have"],
+    data_source: "New Taipei Zhongshan 112-1-2 [cite: 111, 118]"
+  },
+  {
+    question: "Sandy: When the earthquake happened, Dad and I were at home. Where were you? Tim: On the street. I __________ home then and saw the shaking buildings and trees around me. That was terrible.",
+    correct_answer: "was going",
+    incorrect_answers: ["went", "go", "am going"],
+    data_source: "New Taipei Zhongshan 112-1-2 [cite: 111, 118]"
+  },
+  {
+    question: "__________ a successful singer was always Stefani’s dream, and she worked so hard for it.",
+    correct_answer: "Being",
+    incorrect_answers: ["Doing", "Became", "To make"],
+    data_source: "New Taipei Zhongshan 112-1-2 [cite: 111, 118]"
+  },
+  {
+    question: "Scott: Do you need some water? You have a __________ in your throat. Julian: Yes. Thanks. I sang with my friends all night long and lost my voice.",
+    correct_answer: "frog",
+    incorrect_answers: ["sheep", "pumpkin", "boss"],
+    data_source: "New Taipei Zhongshan 112-1-2 [cite: 111, 118]"
+  },
+  {
+    question: "__________ lending your hand to others, and __________ friends may not be that hard for you.",
+    correct_answer: "Try; making",
+    incorrect_answers: ["Enjoy; make", "Trying; making", "To enjoy; to make"],
+    data_source: "New Taipei Zhongshan 112-1-2 [cite: 111, 118]"
+  },
+  {
+    question: "A windy October is a great time for ___________ kites with the kids in your family.",
+    correct_answer: "flying",
+    incorrect_answers: ["fly", "to fly", "flies"],
+    data_source: "New Taipei Zhongshan 112-1-2 [cite: 111, 118]"
+  },
+  {
+    question: "Carla: Who cooked the meal? It’s so delicious. Audrey: Helen __________. You ___________ to me in the kitchen then. Didn’t you see her there?",
+    correct_answer: "did; were talking",
+    incorrect_answers: ["was; talked", "was; were talking", "does; are talking"],
+    data_source: "New Taipei Zhongshan 112-1-2 [cite: 111, 118]"
+  },
+  {
+    question: "Karen: Hey, Ben. Take a look at this picture. That’s Timmy and you. Ben: I don’t remember __________ it with him. Oh my! We were so young then.",
+    correct_answer: "taking",
+    incorrect_answers: ["to take", "take", "took"],
+    data_source: "New Taipei Zhongshan 112-1-2 [cite: 111, 118]"
+  },
+  {
+    question: "Going door to door __________ for candy __________ a special activity for many children.",
+    correct_answer: "to ask; is",
+    incorrect_answers: ["and ask; is", "asking; are", "to ask; to be"],
+    data_source: "New Taipei Zhongshan 112-1-2 [cite: 111, 118]"
+  },
+  {
+    question: "The salesman __________ calling people for another two weeks but didn’t sell anything out.",
+    correct_answer: "kept",
+    incorrect_answers: ["planned", "finishes", "meant"],
+    data_source: "New Taipei Zhongshan 112-1-2 [cite: 111, 118]"
+  },
+  {
+    question: "Ethan practiced __________ balls every day during the off season. He hoped __________ any from other players in each coming game.",
+    correct_answer: "catching; not to miss",
+    incorrect_answers: ["catching; didn’t miss", "to catch; not missing"], // Note: Option B missing in source, used context from D
+    data_source: "New Taipei Zhongshan 112-1-2 [cite: 111, 118]"
+  },
+  {
+    question: "Hannah: I don’t want to be with my classmates. They are always of little help. Mr. Smith: Don’t __________ on those around you. You may need them when you’re in trouble.",
+    correct_answer: "give up",
+    incorrect_answers: ["make fun", "cool down", "cut out"],
+    data_source: "New Taipei Zhongshan 112-1-2 [cite: 111, 118]"
+  },
+
+  // Source: 110-1-2 8英語 考題.docx (New Taipei City Zhongshan Junior High School)
+  {
+    question: "Father: _________ you cleaning your bathroom at eight twenty this morning? Son: Yes, I was. And I also cleaned the whole living room.",
+    correct_answer: "Were",
+    incorrect_answers: ["Are", "Did", "Was"],
+    data_source: "New Taipei Zhongshan 110-1-2 [cite: 162, 245]"
+  },
+  {
+    question: "Parents always tell me not_________ cellphones when we have meals.",
+    correct_answer: "to use",
+    incorrect_answers: ["using", "used", "use"],
+    data_source: "New Taipei Zhongshan 110-1-2 [cite: 162, 245]"
+  },
+  {
+    question: "Carol: Isn’t the magic show at eight forty-five? Frank: Yes, it’s at _________. We are going to be late. Let’s hurry up!",
+    correct_answer: "a quarter to nine",
+    incorrect_answers: ["half past eight", "fifteen to eight", "a quarter after eight"],
+    data_source: "New Taipei Zhongshan 110-1-2 [cite: 162, 245]"
+  },
+  {
+    question: "I like_________ up early and keep _________ along the river. That makes me feel happy before work.",
+    correct_answer: "to get ; jogging",
+    incorrect_answers: ["got; jogged", "gets; jogs", "getting; to jog"],
+    data_source: "New Taipei Zhongshan 110-1-2 [cite: 162, 245]"
+  },
+  {
+    question: "Beryl: The doctor says I am too heavy, so I stop _________ sweet food for three months. Annie: Wow! It’s not easy for you. You must be healthy now.",
+    correct_answer: "eating",
+    incorrect_answers: ["ate", "eat", "to eat"],
+    data_source: "New Taipei Zhongshan 110-1-2 [cite: 162, 245]"
+  },
+  {
+    question: "Cindy: ________ driving lessons really help you pass the driving test? Milly: Of course. Taking the lessons is very important before I drive on the road.",
+    correct_answer: "Do",
+    incorrect_answers: ["Is", "Are", "Does"],
+    data_source: "New Taipei Zhongshan 110-1-2 [cite: 162, 245]"
+  },
+  {
+    question: "It is important for teenagers _________ enough sleep every day. Doctors say that they should sleep at least eight hours a night.",
+    correct_answer: "to get",
+    incorrect_answers: ["getting", "get", "got"],
+    data_source: "New Taipei Zhongshan 110-1-2 [cite: 162, 245]"
+  },
+  {
+    question: "At this time yesterday, Hank ________ the bathroom when the earthquake _____.",
+    correct_answer: "was using ; happened",
+    incorrect_answers: ["is using ; happens", "used ; happened", "was using ; happens"],
+    data_source: "New Taipei Zhongshan 110-1-2 [cite: 162, 245]"
+  },
+  {
+    question: "Judy: How do you go to school? Lily: My father ________me to school when I was little. Now, I go to school on foot.",
+    correct_answer: "drove",
+    incorrect_answers: ["was driving", "driving", "drives"],
+    data_source: "New Taipei Zhongshan 110-1-2 [cite: 162, 245]"
+  },
+  {
+    question: "Mom: It’s very cold outside. _________ your jacket before you leave the house. Son: OK, I will do it, Mom.",
+    correct_answer: "Put on",
+    incorrect_answers: ["Puts on", "Putting on", "To put on"],
+    data_source: "New Taipei Zhongshan 110-1-2 [cite: 162, 245]"
+  },
+  {
+    question: "Jamie: Why_________ you _________ the phone last night? Yuki: Sorry, I was under the weather yesterday. Maybe I was falling asleep at that time.",
+    correct_answer: "didn’t ; answer",
+    incorrect_answers: ["weren’t ; answering", "were ; answering", "did ; answer"],
+    data_source: "New Taipei Zhongshan 110-1-2 [cite: 162, 245]"
+  },
+  {
+    question: "I_________ taking a trip to other countries because there are always a lot of interesting things there.",
+    correct_answer: "enjoy",
+    incorrect_answers: ["hate", "decide", "plan"],
+    data_source: "New Taipei Zhongshan 110-1-2 [cite: 162, 245]"
+  },
+  {
+    question: "On Halloween, kids wear a mask or a_________, and go door to door to ask for candy.",
+    correct_answer: "costume",
+    incorrect_answers: ["haunted house", "moment", "pumpkin"],
+    data_source: "New Taipei Zhongshan 110-1-2 [cite: 162, 245]"
+  },
+  {
+    question: "Many children usually go trick-or-treating on this day. And they also put jack-o’-lanterns at the front door. Take a guess! What date is it?",
+    correct_answer: "October thirty-first",
+    incorrect_answers: ["January first", "November eleventh", "December twenty-fifth"],
+    data_source: "New Taipei Zhongshan 110-1-2 [cite: 162, 245]"
+  },
+  {
+    question: "Annie: I have a frog in my throat from cheering for my favorite team. Berry: Poor you. __________________.",
+    correct_answer: "You need to drink some water.",
+    incorrect_answers: ["I had butterflies in my stomach, too.", "Don’t keep a frog as a pet.", "I am also afraid of frogs."],
+    data_source: "New Taipei Zhongshan 110-1-2 [cite: 162, 245]"
+  },
+
+  // Source: 113-1-2 八英語.pdf (New Taipei City Zhongshan Junior High School)
+  {
+    question: "Look at the picture. What is the man doing? [Image: Man tying shoes]",
+    correct_answer: "He is putting on his shoes.",
+    incorrect_answers: ["He is feeding his cat.", "He is sweeping the floor.", "He is mopping the stairs."],
+    data_source: "New Taipei Zhongshan 113-1-2 [cite: 338, 572]"
+  },
+  {
+    question: "We went to the haunted house on Halloween. It was a scary _______ when we found a strange woman behind the door.",
+    correct_answer: "moment",
+    incorrect_answers: ["future", "someone", "channel"],
+    data_source: "New Taipei Zhongshan 113-1-2 [cite: 343, 572]"
+  },
+  {
+    question: "Did you finish your homework? Dad _______ someone to wipe the table. Maybe you can help him now.",
+    correct_answer: "is looking for",
+    incorrect_answers: ["was looking for", "looks for", "looked for"],
+    data_source: "New Taipei Zhongshan 113-1-2 [cite: 349, 572]"
+  },
+  {
+    question: "Sorry! What did you just say? I didn't hear you because I _______ something else.",
+    correct_answer: "was listening to",
+    incorrect_answers: ["listen to", "listened to", "can listen to"],
+    data_source: "New Taipei Zhongshan 113-1-2 [cite: 352, 572]"
+  },
+  {
+    question: "Scott: Making a short dancing video _______ popular with students. Tim: You're right. I watch a lot on Instagram.",
+    correct_answer: "is",
+    incorrect_answers: ["are", "being", "to be"],
+    data_source: "New Taipei Zhongshan 113-1-2 [cite: 360, 572]"
+  },
+  {
+    question: "Jamie joined the English singing contest this year because _______ is interesting for her to sing in front of people.",
+    correct_answer: "it",
+    incorrect_answers: ["there", "one", "she"],
+    data_source: "New Taipei Zhongshan 113-1-2 [cite: 364, 572]"
+  },
+  {
+    question: "Scott: Hurry up! The movie started at ten! We are late! Julian: Oh no! It's _______.",
+    correct_answer: "a quarter after ten",
+    incorrect_answers: ["ten to ten", "a quarter to ten", "ten after nine"],
+    data_source: "New Taipei Zhongshan 113-1-2 [cite: 367, 572]"
+  },
+  {
+    question: "Our teacher wanted us _______ hard but _______ learning at the same time because it is part of life.",
+    correct_answer: "to study; enjoy",
+    incorrect_answers: ["to study; enjoyed", "studying; enjoyed", "to study; enjoying"],
+    data_source: "New Taipei Zhongshan 113-1-2 [cite: 375, 572]"
+  },
+  {
+    question: "Shohei Ohtani is a great player in MLB. He is good at _______ baseball.",
+    correct_answer: "playing",
+    incorrect_answers: ["play", "plays", "to play"],
+    data_source: "New Taipei Zhongshan 113-1-2 [cite: 379, 572]"
+  },
+  {
+    question: "My sister told me _______ her clothes, but I did it anyway. She was so angry.",
+    correct_answer: "not to wear",
+    incorrect_answers: ["not wearing", "to wear", "wearing"],
+    data_source: "New Taipei Zhongshan 113-1-2 [cite: 384, 572]"
+  },
+  {
+    question: "My boss hates _______ the last one to know about something important.",
+    correct_answer: "being",
+    incorrect_answers: ["be", "is", "was"],
+    data_source: "New Taipei Zhongshan 113-1-2 [cite: 386, 572]"
+  },
+  {
+    question: "Elle: Ted bought Renee a cake, and she ate it! I thought she hated things like that. Cherry: She _______ sweet food. She was just being kind then and trying to make him happy.",
+    correct_answer: "doesn't eat",
+    incorrect_answers: ["was eating", "didn't eat", "isn't eating"],
+    data_source: "New Taipei Zhongshan 113-1-2 [cite: 392, 572]"
+  },
+  {
+    question: "After studying for hours, Ethan was so tired. He decided to _______ for the day and took a walk at the park.",
+    correct_answer: "give up",
+    incorrect_answers: ["sign up", "make fun", "make up his mind"],
+    data_source: "New Taipei Zhongshan 113-1-2 [cite: 398, 572]"
+  },
+  {
+    question: "Angel practiced _______ every day before she went to junior high school.",
+    correct_answer: "singing",
+    incorrect_answers: ["to sing", "sang", "sing"],
+    data_source: "New Taipei Zhongshan 113-1-2 [cite: 399, 572]"
+  },
+  {
+    question: "After 12 hours studying in the library, Wesley can't wait to go back home and catch some Z's in his lovely bedroom... What does \"catch some Z's\" mean?",
+    correct_answer: "To sleep.",
+    incorrect_answers: ["To worry about.", "To have butterflies.", "To study at the desk."],
+    data_source: "New Taipei Zhongshan 113-1-2 [cite: 409, 572]"
+  }
+];
+
+
+
+const HanLinB2L3L4 = [
+  {
+    question: "A: _____did Amy go to bed last night? She looks so tired.<br>B: _____about 1:30 a.m. She stays up(熬夜) every day for a big test.",
+    correct_answer: "  What time；At",
+    incorrect_answers: ["  What day；On", "  What time; For", "  What day; ╳"]
+  },
+  {
+    question: "Rick: What _______ is your test today?<br>Shiny: It’s ___ two o’clock.",
+    correct_answer: "  time ; at",
+    incorrect_answers: ["  time ; x", "  day ; on", "  day ; x"]
+  },
+  {
+    question: "Anna: Isn’t it Tuesday?<br>Candice: No, it’s not.<br>Anna: _______________<br>Candice: It’s Monday.",
+    correct_answer: "  What day is it today?",
+    incorrect_answers: [
+      "  What day is your family day?",
+      "  What day is the sports day?",
+      "  What day is your birthday?"
+    ]
+  },
+  {
+    question: "A: What time is the ball game?<br>B: It is _______________ .",
+    correct_answer: "  at six twenty",
+    incorrect_answers: ["  six o’clock", "  six twenty", "  at twenty o’clock"]
+  },
+  {
+    question: "A: What day is the meeting?<br>B:_______________",
+    correct_answer: "  It’s next Monday.",
+    incorrect_answers: [
+      "  It’s in the morning.",
+      "  It’s in a big city.",
+      "  It’s a meeting with Mr. Wang"
+    ]
+  },
+  {
+    question: "Teresa’s favorite TV show is _____ 4 p.m. _____ Monday.",
+    correct_answer: "  at; on",
+    incorrect_answers: ["  at; ╳", "  this; ╳", "  on; at"]
+  },
+  {
+    question: "Helen: What day is New Year’s Day this year?<br>Brett: _____",
+    correct_answer: "  Isn’t it on Wednesday?",
+    incorrect_answers: [
+      "  Is it at one one?",
+      "  New Year’s Day is coming.",
+      "  We can go out together that day"
+    ]
+  }
+  , {
+    question: "A: What ______ is it?<br>B: It’s five seventeen.",
+    correct_answer: "  What time",
+    incorrect_answers: ["  How", "  How old", "  What day"]
+  },
+  {
+    question: "That singer’s meet-and-greet is ______ ten ______ Saturday morning.",
+    correct_answer: "  at; on",
+    incorrect_answers: ["  on; on", "  at; at", "  on; at"]
+  },
+  {
+    question: "A: What day is the basketball game?<br>B: It’s ______ this Tuesday.",
+    correct_answer: "  X",
+    incorrect_answers: ["  at", "  on", "  in"]
+  },
+  {
+    question: "A: What are you doing?<br>B: ______.",
+    correct_answer: "  We are writing a report.",
+    incorrect_answers: ["  We are free.", "  You can sing here.", "  The report is ready."]
+  },
+  {
+    question: "A: What day is it today?<br>B: ______.",
+    correct_answer: "  Isn’t it Monday?",
+    incorrect_answers: ["  It’s on Sunday.", "  It’s six o’clock.", "  It’s a good day."]
+  },
+  {
+    question: "Look! Ellen’s sister ______ now. She is a good singer.",
+    correct_answer: "  is singing",
+    incorrect_answers: ["  singing", "  are singing", "  sing"]
+  },
+  {
+    question: "My two-year-old daughter can draw ______ a marker.",
+    correct_answer: "  with",
+    incorrect_answers: ["  to", "  for", "  at"]
+  },
+  {
+    question: "The show is at six p.m. Let’s ______ late.",
+    correct_answer: "  not be",
+    incorrect_answers: ["  don’t", "  no", "  not"]
+  },
+  {
+    question: "A: ______<br>B: He can sing.",
+    correct_answer: "  What can he do?",
+    incorrect_answers: ["  Who can do this?", "  Where can he go?", "  What can he sing?"]
+  },
+  {
+    question: "A: Is Jenny at home?<br>B: Maybe she is. Her bag is on the sofa.",
+    correct_answer: "  I’m not sure.",
+    incorrect_answers: ["  Look at the sign.", "  Where is she now?", "  Please write down her name."]
+  },
+  {
+    question: "A: ______<br>B: Sorry, I can’t. It’s your turn.",
+    correct_answer: "  Can you wash the dog for me?",
+    incorrect_answers: ["  Can you see me?", "  Can you wait for me here?", "  Can you wait for your turn?"]
+  },
+  {
+    question: "Look at the picture on the right. The truck drivers delivered ________ and made sure they were fine.",
+    correct_answer: "  goods",
+    incorrect_answers: ["  channels", "  soldiers", "  success"]
+  },
+  {
+    question: "King: Excuse me. I really have to go now. My son ______ for me at home.<br>Kelly: Sure, no problem. See you tomorrow!",
+    correct_answer: "  is waiting",
+    incorrect_answers: ["  was waiting", "  waits", "  waited"]
+  },
+  {
+    question: "Ray _______ a shower when someone turned off the light. He was nervous and shouted for help.",
+    correct_answer: "  was taking",
+    incorrect_answers: ["  took", "  is taking", "  takes"]
+  },
+  {
+    question: "Alien Huang, a famous singer in Taiwan, ______ on September 16th, 2020. Many people still can’t believe it.",
+    correct_answer: "  died",
+    incorrect_answers: ["  was dying", "  dies", "  die"]
+  },
+  {
+    question: "Mr. Lin: Tim, why did you come to school so early today?<br>Tim: I didn’t finish _______ math, so I woke up early to prepare for the test.",
+    correct_answer: "  studying",
+    incorrect_answers: ["  to study", "  studied", "  study"]
+  },
+  {
+    question: "It’s important not to eat junk food. Eating more vegetables _______ you healthy.",
+    correct_answer: "  keeps",
+    incorrect_answers: ["  keep", "  keeping", "  to keep"]
+  },
+  {
+    question: "Kidd: Are you excited about the camping next February?<br>Joanne: Of course! _____ always fun to go out with everybody.",
+    correct_answer: "  It is",
+    incorrect_answers: ["  That is", "  There is", "  I am"]
+  },
+  {
+    question: "When Mr. Chung was young, ________ baseball was his favorite hobby. Now, he is still a big fan of Brothers.",
+    correct_answer: "  watching",
+    incorrect_answers: ["  watch", "  watched", "  watches"]
+  },
+  {
+    question: "The English singing contest is coming next week. We need ________ after school.",
+    correct_answer: "  to practice",
+    incorrect_answers: ["  practicing", "  to be practiced", "  practiced"]
+  },
+  {
+    question: "Eric: Did you watch the movie Demon Slayer: Mugen Train? It was on TV at ________ this afternoon.<br>Evelyn: No I didn’t. I studied at the library all afternoon. When I left, it was already ten to eight.",
+    correct_answer: "  five to ten",
+    incorrect_answers: ["  five to twelve", "  half past nine", "  half past five"]
+  }, {
+    question: "Peter’s eyesight isn’t very good. He ________ see the words on the blackboard in the back of the classroom.",
+    correct_answer: "  can’t",
+    incorrect_answers: ["  can", "  isn’t", "  not"]
+  },
+  {
+    question: "My dear friend, _________ a good time at today’s Halloween party.",
+    correct_answer: "  have",
+    incorrect_answers: ["  is having", "  having", "  is playing"]
+  },
+  {
+    question: "Everyone at the concert ______ so happy. They are waving their cellphones and singing with the band.",
+    correct_answer: "  is",
+    incorrect_answers: ["  are", "  isn’t", "  aren’t"]
+  },
+  {
+    question: "Miss Yu: Wake Kevin up. He is sleeping in class again.<br>Jason: OK. Let me wake________up.",
+    correct_answer: "  him",
+    incorrect_answers: ["  it", "  her", "  he"]
+  },
+  {
+    question: "_______, look at your teacher and listen to her. Time for class.",
+    correct_answer: "  Boys and girls",
+    incorrect_answers: ["  Don’t", "  Let’s", "  Please"]
+  },
+  {
+    question: "The cartoon “SLAM DUNK” is on TV ______ Monday______ Friday. I watch it every evening.<br> cartoon 卡通",
+    correct_answer: "  from; to",
+    incorrect_answers: ["  at; in", "  on; on", "  on; from"]
+  },
+  {
+    question: "Look! The famous singer, Avril, ______ hands with her fans on the stage.  famous 有名的",
+    correct_answer: "  is shaking",
+    incorrect_answers: ["  shaking", "  are shaking", "  shake"]
+  },
+  {
+    question: "Tina: Jenny and I are going to see a movie twenty minutes later. Are you coming together?<br>Tom: OK, I am free now. _______ meet her at the park. It’s near her house. She can get there very soon.",
+    correct_answer: "  Let’s",
+    incorrect_answers: ["  Please don’t", "  Let’s not", "  Don’t"]
+  },
+  {
+    question: "Alice: Are you free ________?<br>Milly: Yes, I am. Do you have any good ideas?",
+    correct_answer: "  today",
+    incorrect_answers: ["  your birthday", "  eight p.m.", "  ten o’clock"]
+  },
+  {
+    question: "Benson: What are you ______________?<br>Willy: My favorite song “Beautiful Sunday.”",
+    correct_answer: "  listening to",
+    incorrect_answers: ["  drawing", "  using", "  looking at"]
+  },
+  {
+    question: "A: What ______ is it?<br>B: It’s five seventeen.",
+    correct_answer: "  What time",
+    incorrect_answers: ["  How", "  How old", "  What day"]
+  },
+  {
+    question: "That singer’s meet-and-greet is ______ ten ______ Saturday morning.",
+    correct_answer: "  on; at",
+    incorrect_answers: ["  on; on", "  at; at", "  at; on"]
+  },
+  {
+    question: "A: What day is the basketball game?<br>B: It’s ______ this Tuesday.",
+    correct_answer: "  on",
+    incorrect_answers: ["  at", "  X", "  in"]
+  },
+  {
+    question: "A: What are you doing?<br>B: ______.",
+    correct_answer: "  We are writing a report.",
+    incorrect_answers: ["  We are free.", "  You can sing here.", "  The report is ready."]
+  },
+  {
+    question: "A: What day is it today?<br>B: ______.",
+    correct_answer: "  Isn’t it Monday?",
+    incorrect_answers: ["  It’s on Sunday.", "  It’s six o’clock.", "  It’s a good day."]
+  },
+  {
+    question: "Look! Ellen’s sister ______ now. She is a good singer.",
+    correct_answer: "  is singing",
+    incorrect_answers: ["  singing", "  are singing", "  sing"]
+  },
+  {
+    question: "My two-year-old daughter can draw ______ a marker.",
+    correct_answer: "  with",
+    incorrect_answers: ["  to", "  for", "  at"]
+  },
+  {
+    question: "A: ______<br>B: He can sing.",
+    correct_answer: "  What can he do?",
+    incorrect_answers: ["  Who can do this?", "  Where can he go?", "  What can he sing?"]
+  },
+  {
+    question: "A: Is Jenny at home?<br>B: Maybe she is. Her bag is on the sofa.",
+    correct_answer: "  I’m not sure.",
+    incorrect_answers: ["  Look at the sign.", "  Where is she now?", "  Please write down her name."]
+  },
+  {
+    question: "A: ______<br>B: Sorry, I can’t. It’s your turn.",
+    correct_answer: "  Can you wash the dog for me?",
+    incorrect_answers: ["  Can you see me?", "  Can you wait for me here?", "  Can you wait for your turn?"]
+  },
+  {
+    question: "Look at the picture on the right. The truck drivers delivered ________ and made sure they were fine.",
+    correct_answer: "  goods",
+    incorrect_answers: ["  channels", "  soldiers", "  success"]
+  }, {
+    question: "The Browns _____ in the living room when(當…) the mailman rang the doorbell yesterday.",
+    correct_answer: "  were watching TV",
+    incorrect_answers: ["  watch TV", "  watching TV", "  are watching TV"]
+  },
+  {
+    question: "Stop _____ here, boys. You are giving me a headache. Now, go back to your room and read some books.",
+    correct_answer: "  shouting",
+    incorrect_answers: ["  to shout", "  shout", "  shouted"]
+  },
+  {
+    question: "Everyone _____ for the relay race (大隊接力) because we all want to win.",
+    correct_answer: "  keeps practicing",
+    incorrect_answers: ["  need to practice", "  keep to practice", "  needs practicing"]
+  },
+  {
+    question: "_____ up now. It’s seven thirty, and you are late for school again.",
+    correct_answer: "  Get",
+    incorrect_answers: ["  Getting", "  To get", "  Gets"]
+  },
+  {
+    question: "_____ up early tomorrow morning, you need to go to bed now.",
+    correct_answer: "  To get",
+    incorrect_answers: ["  Getting", "  Get", "  Gets"]
+  },
+  {
+    question: "_____ up early on cold days is not easy for my little brother.",
+    correct_answer: "  Getting",
+    incorrect_answers: ["  Get", "  To getting", "  Gets"]
+  },
+  {
+    question: "Mom: It’s time for bed, Dan. Go brush your teeth and _____.<br>Dan: OK, Mom.",
+    correct_answer: "  hit the sack",
+    incorrect_answers: ["  hit the books", "  hit the road", "  hit the bottle"]
+  },
+  {
+    question: "Choose the CORRECT sentence. (選出正確的句子).",
+    correct_answer: "  J.K. Rowling’s books are popular all over the world.",
+    incorrect_answers: [
+      "  John hurted his right hand yesterday.",
+      "  He needs to eat the medicine three times a day.",
+      "  The water isn’t enough clean. Don’t drink it."
+    ]
+  },
+  {
+    question: "A: ______ is it?<br>B: It’s five seventeen.",
+    correct_answer: "  What time",
+    incorrect_answers: ["  How", "  How old", "  What day"]
+  },
+  {
+    question: "That singer’s meet-and-greet is ______ ten ______ Saturday morning.",
+    correct_answer: "  at; on",
+    incorrect_answers: ["  on; on", "  at; at", "  on; at"]
+  },
+  {
+    question: "A: What day is the basketball game?<br>B: It’s ______ this Tuesday.",
+    correct_answer: "  X",
+    incorrect_answers: ["  on", "  at", "  in"]
+  },
+  {
+    question: "A: What are you doing?<br>B: ______.",
+    correct_answer: "  We are writing a report.",
+    incorrect_answers: [
+      "  We are free.",
+      "  You can sing here.",
+      "  The report is ready."
+    ]
+  },
+  {
+    question: "A: What day is it today?<br>B: ______.",
+    correct_answer: "  Isn’t it Monday?",
+    incorrect_answers: [
+      "  It’s on Sunday.",
+      "  It’s six o’clock.",
+      "  It’s a good day."
+    ]
+  },
+  {
+    question: "Look! Ellen’s sister ______ now. She is a good singer.",
+    correct_answer: "  is singing",
+    incorrect_answers: ["  singing", "  are singing", "  sing"]
+  },
+  {
+    question: "My two-year-old daughter can draw ______ a marker.",
+    correct_answer: "  with",
+    incorrect_answers: ["  to", "  for", "  at"]
+  },
+
 
     {
-      question: "A: ______<br>B: He can sing.",
-      correct_answer: "  What can he do?",
-      incorrect_answers: [
-        "  Who can do this?",
-        "  Where can he go?",
-        "  What can he sing?"
-      ]
-    },
-    {
-      question: "A: Is Jenny at home?<br>B: ______ Her bag is on the sofa.",
-      correct_answer: "  I’m not sure.",
-      incorrect_answers: [
-        "  Look at the sign.",
-        "  Where is she now?",
-        "  Please write down her name."
-      ]
-    },
-    {
-      question: "A: ______<br>B: Sorry, I can’t. It’s your turn.",
-      correct_answer: "  Can you wash the dog for me?",
-      incorrect_answers: [
-        "  Can you see me?",
-        "  Can you wait for me here?",
-        "  Can you wait for your turn?"
-      ]
-    }
-  ];
+    question: "A: ______<br>B: He can sing.",
+    correct_answer: "  What can he do?",
+    incorrect_answers: [
+      "  Who can do this?",
+      "  Where can he go?",
+      "  What can he sing?"
+    ]
+  },
+  {
+    question: "A: Is Jenny at home?<br>B: ______ Her bag is on the sofa.",
+    correct_answer: "  I’m not sure.",
+    incorrect_answers: [
+      "  Look at the sign.",
+      "  Where is she now?",
+      "  Please write down her name."
+    ]
+  },
+  {
+    question: "A: ______<br>B: Sorry, I can’t. It’s your turn.",
+    correct_answer: "  Can you wash the dog for me?",
+    incorrect_answers: [
+      "  Can you see me?",
+      "  Can you wait for me here?",
+      "  Can you wait for your turn?"
+    ]
+  }
+];
 
-  const HanLinB4L3L4 = [
-    {
-      question: "Look at the picture on the right. The truck drivers delivered ________ and made sure they were fine.",
-      correct_answer: "  goods",
-      incorrect_answers: ["  channels", "  soldiers", "  success"]
-    },
-    {
-      question: "King: Excuse me. I really have to go now. My son ______ for me at home.<br>Kelly: Sure, no problem. See you tomorrow!",
-      correct_answer: "  is waiting",
-      incorrect_answers: ["  was waiting", "  waits", "  waited"]
-    },
-    {
-      question: "Ray _______ a shower when someone turned off the light. He was nervous and shouted for help.",
-      correct_answer: "  was taking",
-      incorrect_answers: ["  took", "  is taking", "  takes"]
-    },
-    {
-      question: "Alien Huang, a famous singer in Taiwan, ______ on September 16th, 2020. Many people still can’t believe it.",
-      correct_answer: "  died",
-      incorrect_answers: ["  was dying", "  dies", "  die"]
-    },
-    {
-      question: "Mr. Lin: Tim, why did you come to school so early today?<br>Tim: I didn’t finish _______ math, so I woke up early to prepare for the test.",
-      correct_answer: "  studying",
-      incorrect_answers: ["  to study", "  studied", "  study"]
-    },
-    {
-      question: "It’s important not to eat junk food. Eating more vegetables _______ you healthy.",
-      correct_answer: "  keeps",
-      incorrect_answers: ["  keep", "  keeping", "  to keep"]
-    },
-    {
-      question: "Kidd: Are you excited about the camping next February?<br>Joanne: Of course! _____ always fun to go out with everybody.",
-      correct_answer: "  It is",
-      incorrect_answers: ["  That is", "  There is", "  I am"]
-    },
-    {
-      question: "When Mr. Chung was young, ________ baseball was his favorite hobby. Now, he is still a big fan of Brothers.",
-      correct_answer: "  watching",
-      incorrect_answers: ["  watch", "  watched", "  watches"]
-    },
-    {
-      question: "The English singing contest is coming next week. We need ________ after school.",
-      correct_answer: "  to practice",
-      incorrect_answers: ["  practicing", "  to be practiced", "  practiced"]
-    },
-    {
-      question: "Eric: Did you watch the movie Demon Slayer: Mugen Train? It was on TV at ________ this afternoon.<br>Evelyn: No, I didn’t. I studied at the library all afternoon. When I left, it was already ten to eight.",
-      correct_answer: "  five to ten",
-      incorrect_answers: ["  five to twelve", "  half past nine", "  half past five"]
-    },
-    {
-      question: "Alice: Noah, thank you for _____ a true friend when I have a very hard time.<br>Noah: You’re welcome. That’s what friends are for!",
-      correct_answer: "  being",
-      incorrect_answers: ["  be", "  to be", "  been"]
-    },
-    {
-      question: "Daniel: Who left the trash here?<br>Mike: A few students _______ here at this time yesterday. I think it was them.",
-      correct_answer: "  were eating",
-      incorrect_answers: ["  eat", "  was eating", "  eats"]
-    },
-    {
-      question: "Karen: My mom always tells me, “It’s not good ________ yourself for someone else.”<br>Ms. Lin: I agree. Sometimes, we should follow our own way.",
-      correct_answer: "  to change",
-      incorrect_answers: ["  to be changed", "  changing", "  change"]
-    },
-    {
-      question: "Lily: What was Jessie doing during cleaning time yesterday?<br>Anita: She ______ the window.",
-      correct_answer: "  was wiping",
-      incorrect_answers: ["  is wiping", "  wipes", "  wipe"]
-    },
-    {
-      question: "After Emily watched a video about Kinmen, she was surprised by the beautiful view and _______ there in winter vacation.",
-      correct_answer: "  hoped to visit",
-      incorrect_answers: ["  learned to visit", "  hated to visit", "  stopped to visit"]
-    },
-    {
+const HanLinB4L3L4 = [
+  {
+    question: "Look at the picture on the right. The truck drivers delivered ________ and made sure they were fine.",
+    correct_answer: "  goods",
+    incorrect_answers: ["  channels", "  soldiers", "  success"]
+  },
+  {
+    question: "King: Excuse me. I really have to go now. My son ______ for me at home.<br>Kelly: Sure, no problem. See you tomorrow!",
+    correct_answer: "  is waiting",
+    incorrect_answers: ["  was waiting", "  waits", "  waited"]
+  },
+  {
+    question: "Ray _______ a shower when someone turned off the light. He was nervous and shouted for help.",
+    correct_answer: "  was taking",
+    incorrect_answers: ["  took", "  is taking", "  takes"]
+  },
+  {
+    question: "Alien Huang, a famous singer in Taiwan, ______ on September 16th, 2020. Many people still can’t believe it.",
+    correct_answer: "  died",
+    incorrect_answers: ["  was dying", "  dies", "  die"]
+  },
+  {
+    question: "Mr. Lin: Tim, why did you come to school so early today?<br>Tim: I didn’t finish _______ math, so I woke up early to prepare for the test.",
+    correct_answer: "  studying",
+    incorrect_answers: ["  to study", "  studied", "  study"]
+  },
+  {
+    question: "It’s important not to eat junk food. Eating more vegetables _______ you healthy.",
+    correct_answer: "  keeps",
+    incorrect_answers: ["  keep", "  keeping", "  to keep"]
+  },
+  {
+    question: "Kidd: Are you excited about the camping next February?<br>Joanne: Of course! _____ always fun to go out with everybody.",
+    correct_answer: "  It is",
+    incorrect_answers: ["  That is", "  There is", "  I am"]
+  },
+  {
+    question: "When Mr. Chung was young, ________ baseball was his favorite hobby. Now, he is still a big fan of Brothers.",
+    correct_answer: "  watching",
+    incorrect_answers: ["  watch", "  watched", "  watches"]
+  },
+  {
+    question: "The English singing contest is coming next week. We need ________ after school.",
+    correct_answer: "  to practice",
+    incorrect_answers: ["  practicing", "  to be practiced", "  practiced"]
+  },
+  {
+    question: "Eric: Did you watch the movie Demon Slayer: Mugen Train? It was on TV at ________ this afternoon.<br>Evelyn: No, I didn’t. I studied at the library all afternoon. When I left, it was already ten to eight.",
+    correct_answer: "  five to ten",
+    incorrect_answers: ["  five to twelve", "  half past nine", "  half past five"]
+  },
+  {
+    question: "Alice: Noah, thank you for _____ a true friend when I have a very hard time.<br>Noah: You’re welcome. That’s what friends are for!",
+    correct_answer: "  being",
+    incorrect_answers: ["  be", "  to be", "  been"]
+  },
+  {
+    question: "Daniel: Who left the trash here?<br>Mike: A few students _______ here at this time yesterday. I think it was them.",
+    correct_answer: "  were eating",
+    incorrect_answers: ["  eat", "  was eating", "  eats"]
+  },
+  {
+    question: "Karen: My mom always tells me, “It’s not good ________ yourself for someone else.”<br>Ms. Lin: I agree. Sometimes, we should follow our own way.",
+    correct_answer: "  to change",
+    incorrect_answers: ["  to be changed", "  changing", "  change"]
+  },
+  {
+    question: "Lily: What was Jessie doing during cleaning time yesterday?<br>Anita: She ______ the window.",
+    correct_answer: "  was wiping",
+    incorrect_answers: ["  is wiping", "  wipes", "  wipe"]
+  },
+  {
+    question: "After Emily watched a video about Kinmen, she was surprised by the beautiful view and _______ there in winter vacation.",
+    correct_answer: "  hoped to visit",
+    incorrect_answers: ["  learned to visit", "  hated to visit", "  stopped to visit"]
+  },
+  {
     question: "Look at the picture on the right. The truck drivers delivered ________ and made sure they were fine.",
     correct_answer: "  goods",
     incorrect_answers: ["  channels", "  soldiers", "  success"]
@@ -1132,7 +1485,7 @@ const B5L3L4_all = [
     question: "Thank you for _____ so many clothes to us. That’s very kind _____ you.",
     correct_answer: "  donating; of",
     incorrect_answers: ["  send; for", "  buying; of", "  to give; for"]
-  },{
+  }, {
     question: "Eating vegetables and getting enough sleep _____ good _____ your health.",
     correct_answer: "  is; for",
     incorrect_answers: ["  is; at", "  are; for", "  are; at"]
@@ -1223,5 +1576,5 @@ const B5L3L4_all = [
   },
 
 
-  ];
-  
+];
+
