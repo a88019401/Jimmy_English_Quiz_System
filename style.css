@@ -245,3 +245,120 @@ select,input {
     border-radius: 0;
   }
 }
+
+/* === 排行榜美化樣式 === */
+
+.leaderboard-container {
+  margin-top: 30px;
+  background: #1f2847;
+  /* 加上一點深色漸層與陰影，讓區塊浮起來 */
+  background: linear-gradient(145deg, #242e52, #1a223c);
+  border-radius: 16px;
+  padding: 25px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.leaderboard-title {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 22px;
+  color: #fff;
+  letter-spacing: 1px;
+  font-weight: 600;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+/* 讓表格可以水平捲動，手機版不會破版 */
+.table-responsive {
+  overflow-x: auto;
+}
+
+.leaderboard-table {
+  width: 100%;
+  border-collapse: separate; /* 分離邊框，為了讓圓角生效 */
+  border-spacing: 0 8px; /* 設定每一列之間的間距 */
+  font-size: 15px;
+}
+
+.leaderboard-table thead th {
+  text-align: left;
+  padding: 10px 15px;
+  color: #8c96b6; /* 標題用灰藍色 */
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 500;
+}
+
+/* 每一列的樣式 */
+.leaderboard-table tbody tr {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.leaderboard-table tbody td {
+  background-color: #2a3b5f;
+  color: #fff;
+  padding: 16px 15px;
+  border: none;
+}
+
+/* 每一列的第一格 (左圓角) */
+.leaderboard-table tbody td:first-child {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  font-weight: bold;
+  text-align: center;
+  color: #a2aace;
+}
+
+/* 每一列的最後一格 (右圓角) */
+.leaderboard-table tbody td:last-child {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  font-weight: bold;
+  color: #4cd137; /* 分數顯示亮綠色 */
+}
+
+/* Hover 懸停效果：整列稍微浮起變亮 */
+.leaderboard-table tbody tr:hover td {
+  background-color: #354a75;
+}
+.leaderboard-table tbody tr:hover {
+  transform: translateY(-2px);
+}
+
+/* === 前三名特殊榮耀樣式 === */
+
+/* 第一名：金色 */
+.leaderboard-table tbody tr:nth-child(1) td {
+  background: linear-gradient(90deg, rgba(255, 215, 0, 0.15), #2a3b5f);
+  border-top: 1px solid rgba(255, 215, 0, 0.5);
+  border-bottom: 1px solid rgba(255, 215, 0, 0.5);
+}
+.leaderboard-table tbody tr:nth-child(1) td:first-child {
+  color: #ffd700; /* 金色字體 */
+  font-size: 1.2rem;
+  border-left: 1px solid rgba(255, 215, 0, 0.5);
+}
+.leaderboard-table tbody tr:nth-child(1) td:last-child {
+  border-right: 1px solid rgba(255, 215, 0, 0.5);
+  color: #ffd700;
+}
+/* 在第一名前面加個皇冠 (選用) */
+.leaderboard-table tbody tr:nth-child(1) td:first-child::before {
+  content: '👑 ';
+  font-size: 14px;
+}
+
+/* 第二名：銀色 */
+.leaderboard-table tbody tr:nth-child(2) td:first-child {
+  color: #e0e0e0;
+  font-size: 1.1rem;
+}
+
+/* 第三名：銅色 */
+.leaderboard-table tbody tr:nth-child(3) td:first-child {
+  color: #cd7f32;
+  font-size: 1.1rem;
+}
