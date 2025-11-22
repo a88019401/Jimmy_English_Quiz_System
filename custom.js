@@ -1578,3 +1578,1397 @@ const HanLinB4L3L4 = [
 
 ];
 
+const B1L3L4_hinLin = [
+
+  // Source: 110-1-2 7英語 考題.docx
+
+  {
+
+    question: "Time for class! Let’s ______.",
+
+    correct_answer: "not talk",
+
+    incorrect_answers: [
+
+      "don’t talk",
+
+      "talking",
+
+      "not talking"
+
+    ],
+
+    data_source: "New Taipei Zhongshan 110-1-2"
+
+  },
+
+  {
+
+    question: "Cindy: Who is _______ in the kitchen? Amy: My parents _______.",
+
+    correct_answer: "cooking; are",
+
+    incorrect_answers: [
+
+      "cook; is",
+
+      "cooking; is",
+
+      "cook; are"
+
+    ],
+
+    data_source: "New Taipei Zhongshan 110-1-2"
+
+  },
+
+  {
+
+    question: "Our PE teacher, Miss Lin, is teaching ______ how to swim. She is very nice, and we all love ______.",
+
+    correct_answer: "us; her",
+
+    incorrect_answers: [
+
+      "we; her",
+
+      "we; she",
+
+      "us; she"
+
+    ],
+
+    data_source: "New Taipei Zhongshan 110-1-2"
+
+  },
+
+  {
+
+    question: "Ann: What day is today? Ben: ______",
+
+    correct_answer: "Isn’t it Sunday?",
+
+    incorrect_answers: [
+
+      "It’s a sunny day.",
+
+      "It’s on Friday.",
+
+      "It’s cold today."
+
+    ],
+
+    data_source: "New Taipei Zhongshan 110-1-2"
+
+  },
+
+  {
+
+    question: "Cody: What time is the baseball game? Derek: ______",
+
+    correct_answer: "At seven thirty p.m.",
+
+    incorrect_answers: [
+
+      "It’s six p.m.",
+
+      "It’s Sunday afternoon.",
+
+      "It’s nine o’clock."
+
+    ],
+
+    data_source: "New Taipei Zhongshan 110-1-2"
+
+  },
+
+  {
+
+    question: "Fanny is so happy. She is going to OBA’s concert on ______.",
+
+    correct_answer: "Friday night",
+
+    incorrect_answers: [
+
+      "weekend",
+
+      "this Sunday",
+
+      "the afternoon"
+
+    ],
+
+    data_source: "New Taipei Zhongshan 110-1-2"
+
+  },
+
+  {
+
+    question: "Everyone ______ singing and dancing at the concert.",
+
+    correct_answer: "is",
+
+    incorrect_answers: [
+
+      "are",
+
+      "can",
+
+      "be"
+
+    ],
+
+    data_source: "New Taipei Zhongshan 110-1-2"
+
+  },
+
+  {
+
+    question: "Mr. Smith: Eric, please ______ late again. Eric: Yes, sir.",
+
+    correct_answer: "don’t be",
+
+    incorrect_answers: [
+
+      "don’t",
+
+      "not",
+
+      "not be"
+
+    ],
+
+    data_source: "New Taipei Zhongshan 110-1-2"
+
+  },
+
+  {
+
+    question: "Can’t Zac jump rope?",
+
+    correct_answer: "No, but he can swim.",
+
+    incorrect_answers: [
+
+      "No, he isn’t.",
+
+      "Yes, he can’t.",
+
+      "Yes, he’s jump rope."
+
+    ],
+
+    data_source: "New Taipei Zhongshan 110-1-2"
+
+  },
+
+  {
+
+    question: "Choose the correct sentence.",
+
+    correct_answer: "The Bailey family is taking a walk in the park.",
+
+    incorrect_answers: [
+
+      "Jamie is siting next to Yuki.",
+
+      "Sally is singing, isn’t dancing.",
+
+      "Andy is talking the phone in his room."
+
+    ],
+
+    data_source: "New Taipei Zhongshan 110-1-2"
+
+  },
+
+  // Source: 112-1-2-7英語.pdf
+
+  {
+
+    question: "Look at the picture. What are they doing? ",
+
+    correct_answer: "They are running.",
+
+    incorrect_answers: [
+
+      "They are singing.",
+
+      "They are dancing.",
+
+      "They are taking pictures."
+
+    ],
+
+    data_source: "New Taipei Zhongshan 112-1-2"
+
+  },
+
+  {
+
+    question: "Father: John, Mom is in the kitchen. The dinner is almost _______. Are you hungry now?\nSon: Yes, I am. I can eat a horse now.",
+
+    correct_answer: "ready",
+
+    incorrect_answers: [
+
+      "free",
+
+      "safe",
+
+      "sure"
+
+    ],
+
+    data_source: "New Taipei Zhongshan 112-1-2"
+
+  },
+
+  {
+
+    question: "Peter's eyesight isn't very good. He _______ see the words on the blackboard in the back of the classroom.",
+
+    correct_answer: "can't",
+
+    incorrect_answers: [
+
+      "can",
+
+      "isn't",
+
+      "not"
+
+    ],
+
+    data_source: "New Taipei Zhongshan 112-1-2"
+
+  },
+
+  {
+
+    question: "My dear friend, _______ a good time at today's Halloween party.",
+
+    correct_answer: "have",
+
+    incorrect_answers: [
+
+      "is having",
+
+      "having",
+
+      "is playing"
+
+    ],
+
+    data_source: "New Taipei Zhongshan 112-1-2"
+
+  },
+
+  {
+
+    question: "Everyone at the concert _______ so happy. They are waving their cellphones and singing with the band.",
+
+    correct_answer: "is",
+
+    incorrect_answers: [
+
+      "are",
+
+      "isn't",
+
+      "aren't"
+
+    ],
+
+    data_source: "New Taipei Zhongshan 112-1-2"
+
+  },
+
+  {
+
+    question: "Miss Yu: Wake Kevin up. He is sleeping in class again.\nJason: OK. Let me wake _______ up.",
+
+    correct_answer: "him",
+
+    incorrect_answers: [
+
+      "her",
+
+      "he",
+
+      "Boys and girls"
+
+    ],
+
+    data_source: "New Taipei Zhongshan 112-1-2"
+
+  },
+
+  {
+
+    question: "_______ look at your teacher and listen to her. Time for class.",
+
+    correct_answer: "Please",
+
+    incorrect_answers: [
+
+      "Don't",
+
+      "Let's",
+
+      "Monday"
+
+    ],
+
+    data_source: "New Taipei Zhongshan 112-1-2"
+
+  },
+
+  {
+
+    question: "The cartoon \"SLAM DUNK\" is on TV _______ Monday _______ Friday. I watch it every evening.",
+
+    correct_answer: "from; to",
+
+    incorrect_answers: [
+
+      "at; in",
+
+      "on; on",
+
+      "on; from"
+
+    ],
+
+    data_source: "New Taipei Zhongshan 112-1-2"
+
+  },
+
+  {
+
+    question: "Look! The famous singer, Avril, _______ hands with her fans on the stage.",
+
+    correct_answer: "is shaking",
+
+    incorrect_answers: [
+
+      "shaking",
+
+      "are shaking",
+
+      "shake"
+
+    ],
+
+    data_source: "New Taipei Zhongshan 112-1-2"
+
+  },
+
+  {
+
+    question: "Tina: Jenny and I are going to see a movie twenty minutes later. Are you coming together?\nTom: OK, I am free now. _______ meet her at the park. It's near her house. She can get there very soon.",
+
+    correct_answer: "Let's",
+
+    incorrect_answers: [
+
+      "Please don't",
+
+      "Let's not",
+
+      "Don't"
+
+    ],
+
+    data_source: "New Taipei Zhongshan 112-1-2"
+
+  },
+
+  {
+
+    question: "Alice: Are you free _______?\nMilly: Yes, I am. Do you have any good ideas?",
+
+    correct_answer: "today",
+
+    incorrect_answers: [
+
+      "your birthday",
+
+      "eight p.m.",
+
+      "ten o'clock"
+
+    ],
+
+    data_source: "New Taipei Zhongshan 112-1-2"
+
+  },
+
+  {
+
+    question: "Benson: What are you _______? You look very happy.\nWilly: My favorite song \"Beautiful Sunday.\"",
+
+    correct_answer: "listening to",
+
+    incorrect_answers: [
+
+      "drawing",
+
+      "using",
+
+      "looking at"
+
+    ],
+
+    data_source: "New Taipei Zhongshan 112-1-2"
+
+  },
+
+  {
+
+    question: "Son: Mom, _______ I watch TV now?\nMother: No, it's very late. Go to bed right now.",
+
+    correct_answer: "can",
+
+    incorrect_answers: [
+
+      "isn't",
+
+      "aren't",
+
+      "am"
+
+    ],
+
+    data_source: "New Taipei Zhongshan 112-1-2"
+
+  },
+
+  {
+
+    question: "Jason: _______ \nAlice: I am making dinner for my family.",
+
+    correct_answer: "What are you doing?",
+
+    incorrect_answers: [
+
+      "What time is your dinner?",
+
+      "Where are your family?",
+
+      "What you talking about?"
+
+    ],
+
+    data_source: "New Taipei Zhongshan 112-1-2"
+
+  },
+
+  // Source: 113-1-2 七英文.pdf
+
+  {
+
+    question: "Teacher: James, _______ a good boy.\nJames: OK.",
+
+    correct_answer: "be",
+
+    incorrect_answers: [
+
+      "is",
+
+      "do",
+
+      "are"
+
+    ],
+
+    data_source: "New Taipei Zhongshan 113-1-2"
+
+  },
+
+  {
+
+    question: "Mom: _______ \nIvy: Just a minute.",
+
+    correct_answer: "Ivy, close the door, please.",
+
+    incorrect_answers: [
+
+      "Close the door Ivy please.",
+
+      "Please close the door Ivy.",
+
+      "Please Ivy close the door."
+
+    ],
+
+    data_source: "New Taipei Zhongshan 113-1-2"
+
+  },
+
+  {
+
+    question: "Albert: What day is Jay's magic show?\nPolly: _______",
+
+    correct_answer: "It is this Monday afternoon.",
+
+    incorrect_answers: [
+
+      "It is on this Friday.",
+
+      "It is in this Friday evening.",
+
+      "It is in every Monday morning."
+
+    ],
+
+    data_source: "New Taipei Zhongshan 113-1-2"
+
+  },
+
+  {
+
+    question: "It is evening now. Josh and his fans _______ a party under the tree. Everybody _______ a good time.",
+
+    correct_answer: "are having; is having",
+
+    incorrect_answers: [
+
+      "are having; are having",
+
+      "are at; have",
+
+      "are in; are having"
+
+    ],
+
+    data_source: "New Taipei Zhongshan 113-1-2"
+
+  },
+
+  {
+
+    question: "David: _______! Cindy and Jamie _______ goodbye to their grandparents.",
+
+    correct_answer: "Listen!; are saying",
+
+    incorrect_answers: [
+
+      "Look!; are talking",
+
+      "Listen!; are saying with",
+
+      "Look!; are talking with"
+
+    ],
+
+    data_source: "New Taipei Zhongshan 113-1-2"
+
+  },
+
+  {
+
+    question: "Emily: What time is the welcome party for the Simpsons?\nAnne: _______",
+
+    correct_answer: "It is at 8:00 p.m. on Sunday.",
+
+    incorrect_answers: [
+
+      "It is 3:00 in the afternoon.",
+
+      "It is on Sunday.",
+
+      "It isn't at 6:00 p.m."
+
+    ],
+
+    data_source: "New Taipei Zhongshan 113-1-2"
+
+  },
+
+  {
+
+    question: "It's 7:30 p.m. _______ TV. Go _______ your homework right now.",
+
+    correct_answer: "Turn off the; do",
+
+    incorrect_answers: [
+
+      "Close; do",
+
+      "Turn off; write",
+
+      "Close the; doing"
+
+    ],
+
+    data_source: "New Taipei Zhongshan 113-1-2"
+
+  },
+
+  {
+
+    question: "Sally: Who _______ at Blackpink's fan party?\nLarry: Blackpink and Blackpink's fans _______.",
+
+    correct_answer: "is; are",
+
+    incorrect_answers: [
+
+      "is; at",
+
+      "are; are at",
+
+      "are; at"
+
+    ],
+
+    data_source: "New Taipei Zhongshan 113-1-2"
+
+  },
+
+  {
+
+    question: "Bella: Is Mom cooking in the kitchen or sleeping on the sofa?\nDan: _______",
+
+    correct_answer: "Mom is with me. We are running in the park.",
+
+    incorrect_answers: [
+
+      "Yes, she is cooking in the kitchen.",
+
+      "No, she is singing in the bedroom.",
+
+      "No, she is sleeping on the sofa."
+
+    ],
+
+    data_source: "New Taipei Zhongshan 113-1-2"
+
+  },
+
+  {
+
+    question: "Jamie: I am free now. Let's _______ game books and _______ a ball game.\nMax: Sure.",
+
+    correct_answer: "read; watch",
+
+    incorrect_answers: [
+
+      "look; see",
+
+      "looking at; watching",
+
+      "see; look"
+
+    ],
+
+    data_source: "New Taipei Zhongshan 113-1-2"
+
+  },
+
+  {
+
+    question: "Look! The two beautiful dolls _______ Grandpa. Now, I _______ eleven dolls.",
+
+    correct_answer: "are from; have",
+
+    incorrect_answers: [
+
+      "come from; am having",
+
+      "is from; have",
+
+      "are coming from; am having"
+
+    ],
+
+    data_source: "New Taipei Zhongshan 113-1-2"
+
+  },
+
+  {
+
+    question: "Teacher's Day _______ . _______ Yuki or her brothers writing a thank you card for Mr. Smith?",
+
+    correct_answer: "is coming; Is",
+
+    incorrect_answers: [
+
+      "is come; Is",
+
+      "are coming; Are",
+
+      "is coming; Are"
+
+    ],
+
+    data_source: "New Taipei Zhongshan 113-1-2"
+
+  },
+
+  {
+
+    question: "Simon: Can't Zac and I color the mummies blue?\nTeacher: _______",
+
+    correct_answer: "No. You can color them white.",
+
+    incorrect_answers: [
+
+      "Yes, Zac and you can.",
+
+      "Yes, they can color them blue.",
+
+      "No, Zac and you can't sing here."
+
+    ],
+
+    data_source: "New Taipei Zhongshan 113-1-2"
+
+  },
+
+  {
+
+    question: "Ken and I love our two dogs, Lucky and Rocky. _______ are very dear to _______.",
+
+    correct_answer: "They; us",
+
+    incorrect_answers: [
+
+      "The dog; me",
+
+      "They; them",
+
+      "We; us"
+
+    ],
+
+    data_source: "New Taipei Zhongshan 113-1-2"
+
+  },
+
+  {
+
+    question: "Father: Can you wash the cat for your sister?\nSon: Sorry, I can't. _______",
+
+    correct_answer: "It's her turn.",
+
+    incorrect_answers: [
+
+      "I can't wait for her.",
+
+      "It's the turn.",
+
+      "Wait for her turn."
+
+    ],
+
+    data_source: "New Taipei Zhongshan 113-1-2"
+
+  },
+
+  // Source: 111-1-2 7英語 考題.docx
+
+  {
+
+    question: "Susan: Can’t Albert draw dinosaurs? Sally: _______",
+
+    correct_answer: "No. But he can draw mummies.",
+
+    incorrect_answers: [
+
+      "Yes, Albert is Bunny’s friend.",
+
+      "No, Albert can’t go home now.",
+
+      "Yes, he can’t draw dinosaurs."
+
+    ],
+
+    data_source: "New Taipei Zhongshan 111-1-2"
+
+  },
+
+  {
+
+    question: "Ivy: Is Johnny playing with the cats or the toy cars in the living room? Amy: _______",
+
+    correct_answer: "He is playing with the cats.",
+
+    incorrect_answers: [
+
+      "Yes, he is playing with the cats.",
+
+      "No, he is playing with the dogs.",
+
+      "No, he can’t be a little boy."
+
+    ],
+
+    data_source: "New Taipei Zhongshan 111-1-2"
+
+  },
+
+  {
+
+    question: "Teacher: _______ Lisa: Where can I sit? Teacher: You can sit between Tim and James.",
+
+    correct_answer: "Lisa, sit down, please.",
+
+    incorrect_answers: [
+
+      "Please Lisa don’t stand up.",
+
+      "Lisa please don’t stand up.",
+
+      "Sit down Lisa."
+
+    ],
+
+    data_source: "New Taipei Zhongshan 111-1-2"
+
+  },
+
+  {
+
+    question: "Mrs. Johnson: _______ Students: OK.",
+
+    correct_answer: "Let’s not run in the lab.",
+
+    incorrect_answers: [
+
+      "Let’s do not run in the lab.",
+
+      "Let’s walking in the lab.",
+
+      "Let’s not running in the lab."
+
+    ],
+
+    data_source: "New Taipei Zhongshan 111-1-2"
+
+  },
+
+  {
+
+    question: "Students in Taiwan go to school _______ Monday _______ Friday.",
+
+    correct_answer: "from; to",
+
+    incorrect_answers: [
+
+      "on; on",
+
+      "from; on",
+
+      "at; to"
+
+    ],
+
+    data_source: "New Taipei Zhongshan 111-1-2"
+
+  },
+
+  {
+
+    question: "Cody: What day is Mayday’s concert? Yuki: _______",
+
+    correct_answer: "It is this Friday.",
+
+    incorrect_answers: [
+
+      "It is in Friday afternoon.",
+
+      "It is on this Sunday night.",
+
+      "It is at 7:00 p.m."
+
+    ],
+
+    data_source: "New Taipei Zhongshan 111-1-2"
+
+  },
+
+  {
+
+    question: "Mom: _______ your sister. Is she _______ a cooking book or a comic book? Son: OK.",
+
+    correct_answer: "Look at; reading",
+
+    incorrect_answers: [
+
+      "Watch; looking",
+
+      "See; seeing at",
+
+      "Look; looking at"
+
+    ],
+
+    data_source: "New Taipei Zhongshan 111-1-2"
+
+  },
+
+  {
+
+    question: "Kitty: _______ can we draw oranges and bananas in the notebook? Teacher: _______ the pencils.",
+
+    correct_answer: "How; With",
+
+    incorrect_answers: [
+
+      "What; For",
+
+      "Where; Of",
+
+      "Who; In"
+
+    ],
+
+    data_source: "New Taipei Zhongshan 111-1-2"
+
+  },
+
+  {
+
+    question: "Linda: What time is Bella’s birthday party? Sue: _______",
+
+    correct_answer: "It is at 7 p.m.",
+
+    incorrect_answers: [
+
+      "It is 5:00 in the evening.",
+
+      "It is in the morning.",
+
+      "Isn’t it 2:30 today?"
+
+    ],
+
+    data_source: "New Taipei Zhongshan 111-1-2"
+
+  },
+
+  {
+
+    question: "Zac: Is the meet-and-greet of your favorite band coming? Billy: _______",
+
+    correct_answer: "Yes. Can you go with me?",
+
+    incorrect_answers: [
+
+      "No, it’s not today.",
+
+      "It is on Sunday evening.",
+
+      "Yes, the band is from Korea."
+
+    ],
+
+    data_source: "New Taipei Zhongshan 111-1-2"
+
+  },
+
+  {
+
+    question: "Eva: Do you have the time? Ian: Yes, it’s a quarter to eight. Eva: Thank you. _______",
+
+    correct_answer: "It is seven forty-five.",
+
+    incorrect_answers: [
+
+      "It is eight forty-five.",
+
+      "It is fifteen after eight.",
+
+      "It is seven thirty."
+
+    ],
+
+    data_source: "New Taipei Zhongshan 111-1-2"
+
+  },
+
+  {
+
+    question: "Mr. White: What are the girls doing? Peter: _______",
+
+    correct_answer: "They are singing and dancing on the stage.",
+
+    incorrect_answers: [
+
+      "Yes, the girls are dancing with me.",
+
+      "Yes, they are jumping on the rocks.",
+
+      "They are not sleeping on the sofa."
+
+    ],
+
+    data_source: "New Taipei Zhongshan 111-1-2"
+
+  },
+
+  {
+
+    question: "Mr. and Mrs. Brown have one daughter, Mandy. They’re a family of three. _______ are very close to _______.",
+
+    correct_answer: "They; each other",
+
+    incorrect_answers: [
+
+      "The boys; her",
+
+      "The girls; they",
+
+      "He; them"
+
+    ],
+
+    data_source: "New Taipei Zhongshan 111-1-2"
+
+  },
+
+  {
+
+    question: "William: Who _______ drawing comics with Chloe in the classroom? Bill: Martin and Frank _______.",
+
+    correct_answer: "is; are",
+
+    incorrect_answers: [
+
+      "are; are",
+
+      "can; can",
+
+      "do; do"
+
+    ],
+
+    data_source: "New Taipei Zhongshan 111-1-2"
+
+  },
+
+  {
+
+    question: "Teacher: Don’t _______ the phone in class. _______ right now.",
+
+    correct_answer: "talk on; Turn it off",
+
+    incorrect_answers: [
+
+      "talk; Turn off it",
+
+      "use on; Turn off the phone",
+
+      "talk in; Turn the phone off"
+
+    ],
+
+    data_source: "New Taipei Zhongshan 111-1-2"
+
+  },
+
+  // Source: 109-1-2 7英 考題.docx
+
+  {
+
+    question: "Boys and girls, ______ a good time at the party.",
+
+    correct_answer: "have",
+
+    incorrect_answers: [
+
+      "having",
+
+      "is having",
+
+      "are having"
+
+    ],
+
+    data_source: "New Taipei Zhongshan 109-1-2"
+
+  },
+
+  {
+
+    question: "Listen! The birds ______ beautiful songs in the tree.",
+
+    correct_answer: "are singing",
+
+    incorrect_answers: [
+
+      "sing",
+
+      "is singing",
+
+      "can be sing"
+
+    ],
+
+    data_source: "New Taipei Zhongshan 109-1-2"
+
+  },
+
+  {
+
+    question: "Jeremy: Don’t ______ your phone in the museum. Be quiet. Edwina: OK!",
+
+    correct_answer: "use",
+
+    incorrect_answers: [
+
+      "say",
+
+      "talk",
+
+      "sign"
+
+    ],
+
+    data_source: "New Taipei Zhongshan 109-1-2"
+
+  },
+
+  {
+
+    question: "Kitty ______ on the table or looking at the fish. She is sitting on the chair.",
+
+    correct_answer: "isn’t standing",
+
+    incorrect_answers: [
+
+      "is standing",
+
+      "can’t stand",
+
+      "can stand"
+
+    ],
+
+    data_source: "New Taipei Zhongshan 109-1-2"
+
+  },
+
+  {
+
+    question: "This robot is from my uncle. It’s my birthday gift. Now, I ______ ten robots.",
+
+    correct_answer: "have",
+
+    incorrect_answers: [
+
+      "having",
+
+      "am having",
+
+      "can having"
+
+    ],
+
+    data_source: "New Taipei Zhongshan 109-1-2"
+
+  },
+
+  {
+
+    question: "Jolin: What time is your music class? Bill: ______",
+
+    correct_answer: "It’s at two this afternoon.",
+
+    incorrect_answers: [
+
+      "It’s three twenty p.m.",
+
+      "It’s four thirty-five.",
+
+      "It’s at one o’clock p.m."
+
+    ],
+
+    data_source: "New Taipei Zhongshan 109-1-2"
+
+  },
+
+  {
+
+    question: "It’s sunny today. Let’s ______. We can play basketball with Tony.",
+
+    correct_answer: "not be home",
+
+    incorrect_answers: [
+
+      "at home",
+
+      "don’t at home",
+
+      "can’t at home"
+
+    ],
+
+    data_source: "New Taipei Zhongshan 109-1-2"
+
+  },
+
+  {
+
+    question: "Zac and his brother like to play computer games ______.",
+
+    correct_answer: "on Saturday afternoons",
+
+    incorrect_answers: [
+
+      "on every Saturdays",
+
+      "on Saturday tonight",
+
+      "every Saturdays"
+
+    ],
+
+    data_source: "New Taipei Zhongshan 109-1-2"
+
+  },
+
+  {
+
+    question: "______ the fans and ______ the doors when you are not in the classroom.",
+
+    correct_answer: "Turn off ; close",
+
+    incorrect_answers: [
+
+      "Close ; close",
+
+      "Turn off ; turn off",
+
+      "Turn on ; open"
+
+    ],
+
+    data_source: "New Taipei Zhongshan 109-1-2"
+
+  },
+
+  {
+
+    question: "Iris: What can the bear do? Chloe: ______",
+
+    correct_answer: "It can play ball.",
+
+    incorrect_answers: [
+
+      "No, it can’t draw.",
+
+      "Yes, the bear can jump.",
+
+      "They can stand on a ball."
+
+    ],
+
+    data_source: "New Taipei Zhongshan 109-1-2"
+
+  },
+
+  {
+
+    question: "Judy: Where are your cousins? Jenny: In the kitchen. ______ are with ______ parents.",
+
+    correct_answer: "They ; our",
+
+    incorrect_answers: [
+
+      "We ; us",
+
+      "They ; them",
+
+      "You ; their"
+
+    ],
+
+    data_source: "New Taipei Zhongshan 109-1-2"
+
+  },
+
+  {
+
+    question: "Brian: The Christmas party is this Tuesday. Let’s join it. Ellen: Sure. ______",
+
+    correct_answer: "I can’t wait!",
+
+    incorrect_answers: [
+
+      "Can you go?",
+
+      "What day is it?",
+
+      "Are you ready?"
+
+    ],
+
+    data_source: "New Taipei Zhongshan 109-1-2"
+
+  },
+
+  {
+
+    question: "Grandpa is too old. He can’t ______ the sign. Can you ______ it for him?",
+
+    correct_answer: "see ; read",
+
+    incorrect_answers: [
+
+      "look ; say",
+
+      "read ; talk",
+
+      "look at ; watch"
+
+    ],
+
+    data_source: "New Taipei Zhongshan 109-1-2"
+
+  },
+
+  {
+
+    question: "Trump: Where are we now? Are we in the Taipei Zoo? Kelly: What? I can’t hear you. ______",
+
+    correct_answer: "Can you say that again?",
+
+    incorrect_answers: [
+
+      "Go in now.",
+
+      "Let’s go together.",
+
+      "That’s a good idea."
+
+    ],
+
+    data_source: "New Taipei Zhongshan 109-1-2"
+
+  },
+
+  {
+
+    question: "Choose the CORRECT sentence.",
+
+    correct_answer: "The girls are blowing kisses to the singer.",
+
+    incorrect_answers: [
+
+      "Let’s take a look with the flowers.",
+
+      "Do not too close to the geysers.",
+
+      "Dora is studying English books now."
+
+    ],
+
+    data_source: "New Taipei Zhongshan 109-1-2"
+
+  }
+
+];
+
