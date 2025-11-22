@@ -110,46 +110,26 @@
       </div>
 
       <!-- 排行榜：使用 Google Sheet 資料 -->
-      <div
-        class="leaderboard-container"
-        style="
-          margin-top: 24px;
-          background: #151b3c;
-          border-radius: 12px;
-          padding: 16px;
-          color: #fff;
-        "
-      >
-        <h2 style="margin-bottom: 12px; font-size: 20px">目前排行榜</h2>
-        <table
-          class="leaderboard-table"
-          style="width: 100%; border-collapse: collapse; font-size: 14px"
-        >
-          <thead>
-            <tr>
-              <th style="border-bottom: 1px solid #2a335b; padding: 6px 4px">
-                名次
-              </th>
-              <th style="border-bottom: 1px solid #2a335b; padding: 6px 4px">
-                名字
-              </th>
-              <th style="border-bottom: 1px solid #2a335b; padding: 6px 4px">
-                學校
-              </th>
-              <th style="border-bottom: 1px solid #2a335b; padding: 6px 4px">
-                年級
-              </th>
-              <th style="border-bottom: 1px solid #2a335b; padding: 6px 4px">
-                分數
-              </th>
-            </tr>
-          </thead>
-          <tbody id="leaderboard-body">
-            <tr>
-              <td colspan="5" style="padding: 8px 4px">載入中...</td>
-            </tr>
-          </tbody>
-        </table>
+      <div class="leaderboard-container">
+        <h2 class="leaderboard-title">🏆 目前排行榜</h2>
+        <div class="table-responsive">
+          <table class="leaderboard-table">
+            <thead>
+              <tr>
+                <th width="10%">名次</th>
+                <th width="25%">名字</th>
+                <th width="25%">學校</th>
+                <th width="15%">年級</th>
+                <th width="25%">分數</th>
+              </tr>
+            </thead>
+            <tbody id="leaderboard-body">
+              <tr>
+                <td colspan="5" style="text-align: center; padding: 20px;">載入中...</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
 
