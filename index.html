@@ -54,7 +54,10 @@
             <option value="B5L3L4test">(綜合)國三上第二次段考</option>
           </select>
         </div>
-        <button class="btn start">開始測驗</button>
+        <button class="btn start" disabled style="background-color: #808080; border-color: #808080; cursor: not-allowed;">
+    段考結束，目前題庫不開放，敬請第三次段考前兩周再來挑戰！
+</button>
+        <!--<button class="btn start">開始測驗</button>-->
       </div>
 
       <div class="quiz hide">
@@ -112,6 +115,8 @@
       <!-- 排行榜：使用 Google Sheet 資料 -->
       <div class="leaderboard-container">
         <h2 class="leaderboard-title">🏆 目前排行榜</h2>
+                <h2 class="leaderboard-title">資料庫已清洗，恭喜上榜同學</h2>
+
         <div class="table-responsive">
           <table class="leaderboard-table">
             <thead>
