@@ -288,8 +288,7 @@ restartBtn.addEventListener("click", () => {
 // === Google Sheets 版成績上傳與排行榜 ===
 // 請將下面這個網址換成你自己的 Apps Script Web App URL
 // 例如：https://script.google.com/macros/s/XXXXXXXXXXXX/exec
-const SHEET_API_URL = "https://script.google.com/macros/s/AKfycbx1ZU48UYi1iILrA0u44lbOQT6-rmzPCAE3jGTDTKcTZwr17V3-p8gFGkfCxEE8pS9KUg/exec";
-
+const SHEET_API_URL = "https://script.google.com/macros/s/AKfycbx0QJRi1Kt0dNJAsHskq_toDOKy6oYlCuvyeUsq_gl5pEu69ovRuWdvkPExw8Sh-1xTwg/exec";
 // 將成績寫入 Google 試算表
 async function saveScoreToSheet(payload) {
   // 從頁面上讀取學生基本資料
